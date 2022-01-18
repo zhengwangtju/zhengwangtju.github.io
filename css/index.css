@@ -1,0 +1,122 @@
+body{
+    background-color: #ddd;
+}
+
+.container{
+    width: 940px;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.content{
+    margin:10px 20px;
+}
+
+.nav{
+    overflow: hidden;
+
+}
+
+.picture{
+    width: 140px;
+    float: left;
+}
+
+.person{
+    float: left;
+    margin-left: 15px;
+}
+
+.name{
+    font-size: 30px;
+}
+
+.school{
+    margin-top:26px;
+    color: rgb(0, 11, 224);
+}
+
+.tabs{
+    font-size: 20px;
+    overflow: hidden;
+    margin: 10px auto;
+    text-align: center;
+    -webkit-user-select: none;  
+    -moz-user-select: none;   
+    -ms-user-select: none;  
+    user-select: none; 
+}
+
+.tabs>div{
+    display: inline-block;
+}
+
+.tab{
+    display: inline-block;
+    float: left;
+    margin: 0 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.line{
+    border-bottom: 2px solid #ddd;
+}
+
+.message{
+    margin-top: 10px;
+}
+.tab1-content{
+    font-size: 16px;
+}
+
+.intro{
+    margin-top: 20px;
+    text-indent: 50px;
+}
+
+.tab1-content>.title{
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.search li,.teach li,.tab2-content li,.tab3-content li{
+    margin-top: 15px;
+}
+
+.contacts{
+    margin: 15px 20px;
+}
+
+.contact{
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.contact img{
+    width: 24px;
+    float: left;
+}
+
+.contact>div{
+    float: left;
+    margin-left: 10px;
+}
+
+.none{
+    display: none;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.red{
+    color:red;
+}
+
+.tab4-content>div{
+    margin-top: 30px;
+}
