@@ -29,7 +29,7 @@ body{
 }
 
 .name{
-    font-size: 30px;
+    font-size: 2em;
 }
 
 .school{
@@ -38,7 +38,7 @@ body{
 }
 
 .tabs{
-    font-size: 20px;
+    font-size: 1.5em;
     overflow: hidden;
     margin: 10px auto;
     text-align: center;
@@ -67,22 +67,21 @@ body{
 .message{
     margin-top: 10px;
 }
-.tab1-content{
-    font-size: 16px;
-}
 
 .intro{
     margin-top: 20px;
+    font-size: 1.1em;
     text-indent: 50px;
 }
 
 .tab1-content>.title{
     margin-top: 30px;
-    font-size: 25px;
+    font-size: 1.7em;
     font-weight: bold;
 }
 
 .search li,.teach li,.tab2-content li,.tab3-content li{
+    font-size: 1.1em;
     margin-top: 15px;
 }
 
