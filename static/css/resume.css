@@ -63,11 +63,7 @@ html p {
     font-size: 14px;
 }
 .project-detail .pmessage:hover .hide {
-<<<<<<< HEAD
     top: 50px;
-=======
-    top: 10px;
->>>>>>> 0ffac2f65effc4e0549bbe08a3cac62939ee715d
 }
 .w-experience-detail .pmessage:hover .hide {
     top: 30px;
@@ -76,11 +72,7 @@ html p {
     width: 1000px;
     height: 300px;
     margin-top: 20px; 
-<<<<<<< HEAD
     background-image: url(../image/天大.png);
-=======
-    background-image: url(../image/Group.png);
->>>>>>> 0ffac2f65effc4e0549bbe08a3cac62939ee715d
 }
 .peasonal-image {
     width: 100px;
@@ -89,7 +81,6 @@ html p {
 .img-header .content {
     font-family: Courier;
     display: inline-block;
-<<<<<<< HEAD
     margin: 128px 320px;
     /* margin: 128px auto 0 334px; */
     padding: 10px 0px;
@@ -97,13 +88,6 @@ html p {
     /* background: rgba(11,52,79,0.60); */
     /* width: 313px; */
     color: black;
-=======
-    margin: 128px auto 0 334px;
-    padding: 10px 0px;
-    background: rgba(11,52,79,0.60);
-    width: 313px;
-    color: #fff;
->>>>>>> 0ffac2f65effc4e0549bbe08a3cac62939ee715d
 }
 
 .content p {
@@ -248,23 +232,15 @@ section .title.about-me::before {
     border-radius: 50%;
     filter: blur(10px);
 }
-<<<<<<< HEAD
 .project-detail1{
     margin-top: 30px;
 }
-=======
-
->>>>>>> 0ffac2f65effc4e0549bbe08a3cac62939ee715d
 .project-content {
     background: #FFFFFF;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
     border-radius: 5px;
     padding: 20px;
-<<<<<<< HEAD
     /* text-align: center;  */
-=======
-    text-align: center; 
->>>>>>> 0ffac2f65effc4e0549bbe08a3cac62939ee715d
     z-index: 10;
 }
 .project-content p.project-title {
@@ -274,33 +250,22 @@ section .title.about-me::before {
     letter-spacing: 1.14px;
 }
 .project-content p.create-time {
-<<<<<<< HEAD
     margin-top: 10px; 
-=======
-    margin-top: 5px; 
->>>>>>> 0ffac2f65effc4e0549bbe08a3cac62939ee715d
     font-size: 14px;
     color: #767E84;
     letter-spacing: 1px;
 }
 .project-content p.decription {
-<<<<<<< HEAD
     margin-top: 10px; 
-=======
-    margin-top: 15px; 
->>>>>>> 0ffac2f65effc4e0549bbe08a3cac62939ee715d
     text-align: initial;
     font-size: 14px;
     color: #022643;
     letter-spacing: 0;
     line-height: 24px;
 }
-<<<<<<< HEAD
 .w-experience-detail .work-content .video{
     width: 930px;
 }
-=======
->>>>>>> 0ffac2f65effc4e0549bbe08a3cac62939ee715d
 .w-experience-content {
     border-bottom: 1px solid #D6DCE1;
     padding: 30px 0;  
