@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>王征</title>
+    <link rel="stylesheet" href="./static/css/resume.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="img-header">
+                <div class="content">
+                    <p><strong style="font-size: 24px;"> 肝脏肿瘤CT图像分割方法研究 </strong></p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="title project">
+                    <p>项目介绍</p>
+                </div>
+                <div class="project-detail1">
+                    <div class="project-content">
+                        <div>
+                            问题：近年来，全球肝癌发病率和死亡率持续上升，及时发现肝脏病变并进行有效治疗对减少肝癌死亡率至关重要。计算机技术和生物医学不断发展，医学成像设备逐渐普及，医学图像分割在疾病诊断、病例分析、手术规划、预后评估中都有所应用，不仅可以为医生提供器官发生病变的位置、病变区域大小、病灶严重程度等极具价值的信息，而且可以在外科手术过程的实时成像中发挥作用。目前，如何实现肝脏肿瘤高精度自动分割，仍然是医学图像处理中最具挑战性的任务之一。由于人工成本和专业知识限制，很难在一个大型的肝脏图像数据集中，在体素水平上对肝脏及肝脏肿瘤进行标注，对以数据为驱动的深度学习模型来说，带标签数据缺乏这个问题需要解决。其次,肝脏CT图像自身具有灰度分布不均匀、形态数目因人而异、边界模糊的特点，使肝脏肿瘤精细化分割难度进一步加大。
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        方案：提出了一个新型2D肝脏肿瘤分割方法，同时关注肿瘤图像语义信息和边缘信息。解决了肝脏肿瘤边缘模糊问题和个体之间差异大的问题，实现了肝脏肿瘤的精细化分割。
+                        提出了一个新型三维分割网络S-PPM V-Net。空间形状感知模块和改进的空间金字塔池化模块，准确有效地捕捉目标区域之间的空间形状特征，能够有效分割出目标区域。
+                        提出了一个由粗到细的分割框架，屏蔽无关脏器的干扰，提高肿瘤分割精确度，有效解决带标签医学图像 获取难度大的问题。基于ITK和VTK可视化工具设计并实现了一款可视化分割系统用于辅助医疗诊断，包含患者信息管理、数据预处理、图像分割、三维可视化、交互和诊断管理六大功能模块。
+
+                    </div>
+                    <!-- <div class="col-3-abs" id="project-1">
+                        <div class="project-content"> <img src="./static/image/LOGO2.png" alt="">
+                            <p class="project-title">聊天应用开发</p>
+                            <p class="create-time">2014.8 - 2014.9</p>
+                            <p class="decription"> 该作品使用了MVC设计模式，SqlServer数据库，Servlet、jquery ajax的技术上制作的一个动态购物网站，实现了在数据库查询出商品显示在页面上，实现了购物车与购买功能，并对数据库进行相应操作。 </p>
+                        </div>
+                        <div class="link-to">
+                            <a href="https://www.baidu.com" class="button">查看DEMO</a>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
+                    <div class="col-3-abs endline" id="project-2">
+                        <div class="project-content"> <img src="./static/image/LOGO3.png" alt="">
+                            <p class="project-title">购物商城前端搭建</p>
+                            <p class="create-time">2014.8 - 2014.9</p>
+                            <p class="decription"> 该作品使用了MVC设计模式，SqlServer数据库，Servlet、jquery ajax的技术上制作的一个动态购物网站，实现了在数据库查询出商品显示在页面上，实现了购物车与购买功能，并对数据库进行相应操作。 </p>
+                        </div>
+                        <div class="link-to">
+                            <a href="https://www.baidu.com" class="button">查看DEMO</a>
+                            <div class="shadow"></div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+            <section>
+                <div class="title work">
+                    <p>项目架构</p>
+                </div>
+                <div class="w-experience-detail">
+                    <div class="item w-experience-content">
+                        <img src="./static/image/医疗图像.png" alt="">
+                    </div>
+                    <div class="item w-experience-content">
+                        <img src="./static/image/医疗图像1.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="title work">
+                    <p>项目视频</p>
+                </div>
+                <div class="w-experience-detail">
+                    <div class="work-content">
+                        <video class="video" src="video/医疗图像.mp4" controls></video>
+                    </div>
+                    
+                    <a href="./static/ppt/医疗图像.pptx" download="test.ppt" style="font-size: 18px;">点击下载ppt</a>
+                    
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section>
+               
+                <div class="peasonal-message">
+                    <div class="item">
+                        <p class="name">王征</p>
+                        <p class="phone">18622012862（V信）</p>
+                        <p class="email">wzheng@tju.edu.cn</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+</body>
+
+</html>
