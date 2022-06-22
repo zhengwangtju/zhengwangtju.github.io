@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>王征</title>
+    <link rel="stylesheet" href="./static/css/resume.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="img-header">
+                <div class="content">
+                    <p><strong style="font-size: 24px;"> 石窟寺岩体稳定性预测评估系统 </strong></p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="title project">
+                    <p>项目介绍</p>
+                </div>
+                <div class="project-detail1">
+                    <div class="project-content">
+                        <div>
+                            问题：石窟寺稳定性变化是一个极其漫长的过程，建模难度很大，常规以大数据+深度学习的建模技术失效；
+                            石窟寺稳定性受到多种因素综合作用，如何体现不同地理空间、时间、自然环境、洞窟材质和结构等因素对稳定性的影响是一个挑战,几乎无法验证,目标模型单调递减函数如何表示？影响函数形状的参数如何确定？如何验证？如何加入人为、自然等突变因素？如何增加预测的科学性？如何确定失稳阈值？是待解决的难题。
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        方案：通过对石窟寺稳定性退化机理的深入研究，我们发现，退化机理其实是由微观作用逐步作用到局部，最终作用到整体的，因此在不考虑人为等极端因素的影响下，石窟寺的稳定性是一个漫长连续的下降过程，因此我们的目标模型用连续单调递减函数表示，同时初始值设为1，最终其会收敛于一个小于1的数值。在对收集到的石窟寺多元数据的分析过程中，我们发现多种因素的影响可以归结为环境因子、材质结构因子和时间周期的影响，那么从长期作用来看，其最终表现在对于函数形状的影响。因此我们提出了基于微观-局部-整体多尺度融合的石窟寺稳定性退化模型,设计了基于目标模型的稳定性评估公式，在此基础上进行实验验证，参数调整，对石窟寺未来长时间的稳定性进行可靠评估。
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="title work">
+                    <p>项目架构</p>
+                </div>
+                <div class="w-experience-detail">
+                    <div class="item w-experience-content">
+                        <img src="./static/image/石窟寺.png" alt="">
+                    </div>
+                    <div class="item w-experience-content">
+                        <img src="./static/image/石窟寺1.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="title work">
+                    <p>项目视频</p>
+                </div>
+                <div class="w-experience-detail">
+                    <div class="work-content">
+                        <video class="video" src="video/医疗图像.mp4" controls></video>
+                    </div>
+                    
+                    <a href="./static/ppt/石窟寺.pptx" download="test.ppt" style="font-size: 18px;">点击下载ppt</a>
+                    
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section>
+               
+                <div class="peasonal-message">
+                    <div class="item">
+                        <p class="name">王征</p>
+                        <p class="phone">18622012862（V信）</p>
+                        <p class="email">wzheng@tju.edu.cn</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+</body>
+
+</html>
