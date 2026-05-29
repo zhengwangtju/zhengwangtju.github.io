@@ -2,6 +2,7 @@
 layout: page
 title: 成员
 subtitle: Members
+permalink: /members/
 active_nav: members
 description: 王征课题组成员、培养理念与毕业生。
 ---
@@ -16,14 +17,14 @@ description: 王征课题组成员、培养理念与毕业生。
 <section class="section">
   <h2 class="section-title">指导教师</h2>
   <div class="card-grid">
-    {%- for person in m.faculty %}{% include member-card.html member=person %}{% endfor %}
+    {%- for person in m.faculty %}{% include components/member-card.html member=person %}{% endfor %}
   </div>
 </section>
 
 <section class="section">
   <h2 class="section-title">在读学生</h2>
   <div class="card-grid">
-    {%- for person in m.students %}{% include member-card.html member=person %}{% endfor %}
+    {%- for person in m.students %}{% include components/member-card.html member=person %}{% endfor %}
   </div>
 </section>
 

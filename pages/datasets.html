@@ -2,6 +2,7 @@
 layout: page
 title: Datasets
 subtitle: 数据集
+permalink: /datasets/
 active_nav: datasets
 description: 王征课题组自建数据集。
 ---
@@ -13,7 +14,7 @@ description: 王征课题组自建数据集。
   {% else %}
   <p class="prose">实验室自建的数据集（当前为占位骨架，真实数据陆续补充）：</p>
   <div class="card-grid">
-    {%- for d in dss %}{% include dataset-card.html dataset=d %}{% endfor %}
+    {%- for d in dss %}{% include components/dataset-card.html dataset=d %}{% endfor %}
   </div>
   {% endif %}
 </section>

@@ -1,16 +1,16 @@
-# 主导航 —— 唯一来源。加一个板块 = 在这里加一项 + 建一个对应页面。
+# 主导航 —— 唯一来源。加一个板块 = 在这里加一项 + 在 pages/ 建一个页面（设好 permalink）。
 - id: home
   title: 首页
   url: /
 - id: publications
   title: 论文
-  url: /publications.html
+  url: /publications/
 - id: projects
   title: 项目
-  url: /projects.html
+  url: /projects/
 - id: members
   title: 成员
-  url: /members.html
+  url: /members/
 - id: datasets
   title: Datasets
-  url: /datasets.html
+  url: /datasets/

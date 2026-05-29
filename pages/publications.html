@@ -2,6 +2,7 @@
 layout: page
 title: 论文
 subtitle: Publications
+permalink: /publications/
 active_nav: publications
 description: 王征课题组论文发表列表。
 ---
@@ -15,7 +16,7 @@ description: 王征课题组论文发表列表。
 <section class="section">
   <h2 class="section-title">{{ y }}</h2>
   <ul class="pub-list">
-    {%- for pub in pubs %}{% if pub.year == y %}{% include publication-item.html pub=pub %}{% endif %}{% endfor %}
+    {%- for pub in pubs %}{% if pub.year == y %}{% include components/publication-item.html pub=pub %}{% endif %}{% endfor %}
   </ul>
 </section>
 {%- endfor %}

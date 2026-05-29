@@ -2,6 +2,7 @@
 layout: page
 title: 项目
 subtitle: Projects & Research Grants
+permalink: /projects/
 active_nav: projects
 description: 王征课题组代表性项目与科研课题。
 ---
@@ -9,7 +10,7 @@ description: 王征课题组代表性项目与科研课题。
   <h2 class="section-title">代表性项目</h2>
   <div class="card-grid">
     {%- assign projs = site.projects | sort: 'order' %}
-    {%- for p in projs %}{% include project-card.html project=p %}{% endfor %}
+    {%- for p in projs %}{% include components/project-card.html project=p %}{% endfor %}
   </div>
 </section>
 

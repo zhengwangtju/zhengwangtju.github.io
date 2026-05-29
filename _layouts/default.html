@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'zh-CN' }}">
-{%- include head.html -%}
+{%- include layout/head.html -%}
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
-  {%- include site-header.html -%}
-  {%- include nav.html -%}
+  {%- include layout/site-header.html -%}
+  {%- include layout/nav.html -%}
   <main id="main" class="container page">
     {{ content }}
   </main>
-  {%- include footer.html -%}
+  {%- include layout/footer.html -%}
 </body>
 </html>
