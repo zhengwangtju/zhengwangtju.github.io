@@ -12,9 +12,13 @@ description: 王征课题组论文发表列表。
 {% if pubs.size == 0 %}
 <p class="prose empty-state">论文数据待补充。</p>
 {% else %}
+<p class="prose lead">课题组在 CVPR、AAAI、IEEE Transactions on Image Processing 等会议与期刊发表论文一百余篇，以下按年份倒序列出代表性工作。</p>
 {%- for y in years %}
-<section class="section">
-  <h2 class="section-title">{{ y }}</h2>
+<section class="section pub-year" data-reveal>
+  <header class="section-head section-head--year">
+    <span class="section-num">{{ y }}</span>
+    <span class="section-en">{{ y }} Selected</span>
+  </header>
   <ul class="pub-list">
     {%- for pub in pubs %}{% if pub.year == y %}{% include components/publication-item.html pub=pub %}{% endif %}{% endfor %}
   </ul>

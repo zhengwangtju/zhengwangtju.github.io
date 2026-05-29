@@ -1,14 +1,13 @@
 {%- assign info = site.data.site_info -%}
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="site-header__photo-link" href="{{ '/' | relative_url }}">
-      <img class="site-header__photo" src="{{ info.photo | relative_url }}" alt="{{ info.name_zh }} 照片" width="120" height="160">
+<header class="masthead" data-reveal>
+  <div class="masthead__bar wrap">
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="{{ info.group_name }} 首页">
+      <span class="wordmark__mark" aria-hidden="true"></span>
+      <span class="wordmark__text">
+        <span class="wordmark__zh">{{ info.group_name }}</span>
+        <span class="wordmark__en">Memory&nbsp;&amp;&nbsp;Reasoning Lab · Tianjin University</span>
+      </span>
     </a>
-    <div class="site-header__id">
-      <p class="site-header__name">{{ info.title_line }}</p>
-      {%- for line in info.affiliations %}
-      <p class="site-header__affil">{{ line }}</p>
-      {%- endfor %}
-    </div>
+    {% include layout/nav.html %}
   </div>
 </header>

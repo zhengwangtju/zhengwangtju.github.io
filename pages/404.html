@@ -3,7 +3,9 @@ layout: default
 title: 页面未找到
 permalink: /404.html
 ---
-<div class="page-head">
-  <h1 class="page-title">404 · 页面未找到</h1>
+<div class="wrap page error-page" data-reveal>
+  <p class="eyebrow">Error 404</p>
+  <h1 class="error-page__code">404</h1>
+  <p class="error-page__msg">抱歉，你访问的页面不存在或已移动。</p>
+  <p><a class="button" href="{{ '/' | relative_url }}">返回首页</a></p>
 </div>
-<p class="prose">抱歉，你访问的页面不存在。<a href="{{ '/' | relative_url }}">返回首页</a>。</p>

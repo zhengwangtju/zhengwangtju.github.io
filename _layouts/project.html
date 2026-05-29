@@ -1,41 +1,56 @@
 ---
 layout: default
 ---
-<article class="project-detail">
-  <div class="page-head">
-    <h1 class="page-title">{{ page.title }}</h1>
-    {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
-    {% if page.tag %}<span class="tag">{{ page.tag }}</span>{% endif %}
-  </div>
+<div class="wrap page">
+  <article class="detail project-detail" data-reveal>
+    <p class="back-link back-link--top"><a href="{{ '/projects/' | relative_url }}"><span aria-hidden="true">←</span> 项目列表</a></p>
+    <header class="page-head">
+      {% if page.tag %}<p class="eyebrow">{{ page.tag }}</p>{% endif %}
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="detail__subtitle">{{ page.subtitle }}</p>{% endif %}
+    </header>
 
-  <section class="section">
-    <h2 class="section-title">项目介绍</h2>
-    {% if page.problem %}<div class="prose"><strong>问题：</strong>{{ page.problem }}</div>{% endif %}
-    {% if page.solution %}<div class="prose"><strong>方案：</strong>{{ page.solution }}</div>{% endif %}
-    {{ content }}
-  </section>
+    <section class="section">
+      <header class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">项目介绍</h2>
+        <span class="section-en">Overview</span>
+      </header>
+      {% if page.problem %}<div class="prose"><span class="prose__label">问题</span>{{ page.problem }}</div>{% endif %}
+      {% if page.solution %}<div class="prose"><span class="prose__label">方案</span>{{ page.solution }}</div>{% endif %}
+      {{ content }}
+    </section>
 
-  {% if page.arch_images %}
-  <section class="section">
-    <h2 class="section-title">项目架构</h2>
-    <div class="img-grid">
-      {%- for img in page.arch_images %}
-      <figure class="img-grid__item"><img src="{{ img | relative_url }}" alt="{{ page.title }} 架构图 {{ forloop.index }}" loading="lazy"></figure>
-      {%- endfor %}
-    </div>
-  </section>
-  {% endif %}
+    {% if page.arch_images %}
+    <section class="section">
+      <header class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">项目架构</h2>
+        <span class="section-en">Architecture</span>
+      </header>
+      <div class="img-grid">
+        {%- for img in page.arch_images %}
+        <figure class="img-grid__item"><img src="{{ img | relative_url }}" alt="{{ page.title }} 架构图 {{ forloop.index }}" loading="lazy"></figure>
+        {%- endfor %}
+      </div>
+    </section>
+    {% endif %}
 
-  {% if page.effect_images %}
-  <section class="section">
-    <h2 class="section-title">效果展示</h2>
-    <div class="img-grid">
-      {%- for img in page.effect_images %}
-      <figure class="img-grid__item"><img src="{{ img | relative_url }}" alt="{{ page.title }} 效果展示 {{ forloop.index }}" loading="lazy"></figure>
-      {%- endfor %}
-    </div>
-  </section>
-  {% endif %}
+    {% if page.effect_images %}
+    <section class="section">
+      <header class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">效果展示</h2>
+        <span class="section-en">Results</span>
+      </header>
+      <div class="img-grid">
+        {%- for img in page.effect_images %}
+        <figure class="img-grid__item"><img src="{{ img | relative_url }}" alt="{{ page.title }} 效果展示 {{ forloop.index }}" loading="lazy"></figure>
+        {%- endfor %}
+      </div>
+    </section>
+    {% endif %}
 
-  <p class="back-link"><a href="{{ '/projects/' | relative_url }}">← 返回项目列表</a></p>
-</article>
+    <p class="back-link"><a href="{{ '/projects/' | relative_url }}"><span aria-hidden="true">←</span> 返回项目列表</a></p>
+  </article>
+</div>

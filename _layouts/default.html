@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'zh-CN' }}">
 {%- include layout/head.html -%}
-<body>
+<body class="{% if page.url == '/' %}is-home{% endif %}">
   <a class="skip-link" href="#main">跳到主要内容</a>
   {%- include layout/site-header.html -%}
-  {%- include layout/nav.html -%}
-  <main id="main" class="container page">
+  <main id="main">
     {{ content }}
   </main>
   {%- include layout/footer.html -%}

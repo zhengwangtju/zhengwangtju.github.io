@@ -1,5 +1,5 @@
 <nav class="site-nav" aria-label="主导航">
-  <ul class="container site-nav__list">
+  <ul class="site-nav__list">
     {%- for item in site.data.nav %}
     {%- assign is_active = false %}
     {%- if page.active_nav == item.id %}{% assign is_active = true %}{% endif %}
