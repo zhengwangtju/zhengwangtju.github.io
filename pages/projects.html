@@ -29,7 +29,7 @@ description: 王征课题组代表性项目与科研课题。
     <li class="grant">
       <span class="grant__idx">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
       <span class="grant__title">{{ g.title }}</span>
-      <span class="grant__meta">{{ g.funder }} · {{ g.period }} · {{ g.role }}</span>
+      <span class="grant__meta">{% if g.funder %}{{ g.funder }} · {% endif %}{{ g.period }} · {{ g.role }}</span>
     </li>
     {%- endfor %}
   </ol>

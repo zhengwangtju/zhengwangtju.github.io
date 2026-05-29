@@ -1,7 +1,7 @@
 <li class="pub">
   {% if include.pub.venue %}<span class="pub__venue">{{ include.pub.venue }}</span>{% endif %}
   <div class="pub__body">
-    <p class="pub__title">{{ include.pub.title }}</p>
+    <p class="pub__title">{{ include.pub.title }}{% if include.pub.note %} <span class="pub__badge">{{ include.pub.note }}</span>{% endif %}</p>
     <p class="pub__meta">{{ include.pub.authors }}{% if include.pub.year %} · {{ include.pub.year }}{% endif %}{% if include.pub.type %} · {{ include.pub.type }}{% endif %}</p>
     {% if include.pub.links.pdf or include.pub.links.code or include.pub.links.project %}
     <p class="pub__links">
