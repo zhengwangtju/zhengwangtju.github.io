@@ -1,0 +1,23 @@
+# macOS / OS junk
+.DS_Store
+**/.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Dependencies (future-proofing)
+node_modules/
+
+# Jekyll build output (when shared chrome lands in phase 2)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Claude Code local settings
+.claude/settings.local.json
