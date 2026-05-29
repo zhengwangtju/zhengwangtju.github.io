@@ -7,29 +7,47 @@ active_nav: members
 description: 王征课题组成员、培养理念与毕业生。
 ---
 {%- assign m = site.data.members -%}
-<section class="section">
-  <h2 class="section-title">培养理念</h2>
-  <ul class="bullet-list">
+
+<section class="section" data-reveal>
+  <header class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title">培养理念</h2>
+    <span class="section-en">Philosophy</span>
+  </header>
+  <ul class="lined-list">
     {%- for line in m.philosophy %}<li>{{ line }}</li>{% endfor %}
   </ul>
 </section>
 
-<section class="section">
-  <h2 class="section-title">指导教师</h2>
-  <div class="card-grid">
+<section class="section" data-reveal>
+  <header class="section-head">
+    <span class="section-num">02</span>
+    <h2 class="section-title">指导教师</h2>
+    <span class="section-en">Faculty</span>
+  </header>
+  <div class="member-grid">
     {%- for person in m.faculty %}{% include components/member-card.html member=person %}{% endfor %}
   </div>
 </section>
 
-<section class="section">
-  <h2 class="section-title">在读学生</h2>
-  <div class="card-grid">
+<section class="section" data-reveal>
+  <header class="section-head">
+    <span class="section-num">03</span>
+    <h2 class="section-title">在读学生</h2>
+    <span class="section-en">Students</span>
+  </header>
+  <div class="member-grid">
     {%- for person in m.students %}{% include components/member-card.html member=person %}{% endfor %}
   </div>
 </section>
 
-<section class="section">
-  <h2 class="section-title">毕业生 / 校友<span class="section-note">（排名不分先后）</span></h2>
+<section class="section" data-reveal>
+  <header class="section-head">
+    <span class="section-num">04</span>
+    <h2 class="section-title">毕业生 / 校友</h2>
+    <span class="section-en">Alumni</span>
+  </header>
+  <p class="prose muted-note">排名不分先后</p>
   <ul class="alumni-list">
     {%- for name in m.alumni %}<li class="alumni">{{ name }}</li>{% endfor %}
   </ul>

@@ -1,11 +1,14 @@
 <li class="pub">
-  <p class="pub__title">{{ include.pub.title }}</p>
-  <p class="pub__meta">{{ include.pub.authors }}{% if include.pub.venue %}. <em>{{ include.pub.venue }}</em>{% endif %}{% if include.pub.year %}, {{ include.pub.year }}{% endif %}{% if include.pub.type %} · {{ include.pub.type }}{% endif %}</p>
-  {% if include.pub.links.pdf or include.pub.links.code or include.pub.links.project %}
-  <p class="pub__links">
-    {% if include.pub.links.pdf %}<a href="{{ include.pub.links.pdf }}">PDF</a>{% endif %}
-    {% if include.pub.links.code %}<a href="{{ include.pub.links.code }}">Code</a>{% endif %}
-    {% if include.pub.links.project %}<a href="{{ include.pub.links.project }}">Project</a>{% endif %}
-  </p>
-  {% endif %}
+  {% if include.pub.venue %}<span class="pub__venue">{{ include.pub.venue }}</span>{% endif %}
+  <div class="pub__body">
+    <p class="pub__title">{{ include.pub.title }}</p>
+    <p class="pub__meta">{{ include.pub.authors }}{% if include.pub.year %} · {{ include.pub.year }}{% endif %}{% if include.pub.type %} · {{ include.pub.type }}{% endif %}</p>
+    {% if include.pub.links.pdf or include.pub.links.code or include.pub.links.project %}
+    <p class="pub__links">
+      {% if include.pub.links.pdf %}<a href="{{ include.pub.links.pdf }}">PDF</a>{% endif %}
+      {% if include.pub.links.code %}<a href="{{ include.pub.links.code }}">Code</a>{% endif %}
+      {% if include.pub.links.project %}<a href="{{ include.pub.links.project }}">Project</a>{% endif %}
+    </p>
+    {% endif %}
+  </div>
 </li>

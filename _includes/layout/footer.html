@@ -1,15 +1,36 @@
-{%- assign c = site.data.site_info.contact -%}
+{%- assign info = site.data.site_info -%}
+{%- assign c = info.contact -%}
 <footer class="site-footer">
-  <div class="container">
-    <h2 class="site-footer__title">联系方式</h2>
-    <ul class="site-footer__contacts">
-      <li><span class="site-footer__label">地址</span>{{ c.address }}</li>
-      <li><span class="site-footer__label">电话</span>{{ c.phone }}</li>
-      <li><span class="site-footer__label">邮箱</span><a href="mailto:{{ c.email }}">{{ c.email }}</a></li>
-      {%- if c.bilibili %}
-      <li><span class="site-footer__label">B 站</span>{{ c.bilibili }}</li>
-      {%- endif %}
-    </ul>
-    <p class="site-footer__copy">© {{ site.time | date: '%Y' }} {{ site.data.site_info.name_zh }} · 天津大学</p>
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="wordmark__mark wordmark__mark--light" aria-hidden="true"></span>
+      <p class="site-footer__lab">{{ info.group_name }}</p>
+      <p class="site-footer__lab-en">Memory &amp; Reasoning Lab</p>
+      <p class="site-footer__affil">天津大学 · 智能与计算学部 · 人工智能学院</p>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__title">联系</h2>
+      <ul class="site-footer__list">
+        <li><span class="site-footer__key">地址</span><span>{{ c.address }}</span></li>
+        <li><span class="site-footer__key">电话</span><span>{{ c.phone }}</span></li>
+        <li><span class="site-footer__key">邮箱</span><a href="mailto:{{ c.email }}">{{ c.email }}</a></li>
+        {%- if c.bilibili %}<li><span class="site-footer__key">B 站</span><span>{{ c.bilibili }}</span></li>{%- endif %}
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__title">导航</h2>
+      <ul class="site-footer__list site-footer__list--nav">
+        {%- for item in site.data.nav %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap site-footer__base">
+    <p class="site-footer__copy">© {{ site.time | date: '%Y' }} {{ info.name_zh }} 课题组 · 天津大学</p>
+    <p class="site-footer__tagline">记忆与推理 · 时序预测大模型 · AI&nbsp;for&nbsp;Science</p>
   </div>
 </footer>

@@ -7,12 +7,16 @@ active_nav: datasets
 description: 王征课题组自建数据集。
 ---
 {%- assign dss = site.datasets | sort: 'order' -%}
-<section class="section">
-  <h2 class="section-title">自建数据集</h2>
+<section class="section" data-reveal>
+  <header class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title">自建数据集</h2>
+    <span class="section-en">Datasets</span>
+  </header>
   {% if dss.size == 0 %}
   <p class="prose empty-state">数据集即将上线。</p>
   {% else %}
-  <p class="prose">实验室自建的数据集（当前为占位骨架，真实数据陆续补充）：</p>
+  <p class="prose lead">实验室围绕智能电网、智慧管网、智慧敦煌等场景自建的数据集（当前为占位骨架，真实数据陆续补充）。</p>
   <div class="card-grid">
     {%- for d in dss %}{% include components/dataset-card.html dataset=d %}{% endfor %}
   </div>

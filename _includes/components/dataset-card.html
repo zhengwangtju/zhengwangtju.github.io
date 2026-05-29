@@ -1,13 +1,13 @@
 <article class="card dataset-card">
   <div class="card__body">
     <h3 class="card__title"><a href="{{ include.dataset.url | relative_url }}">{{ include.dataset.title }}</a></h3>
-    {% if include.dataset.tags %}<p class="card__tags">{% for t in include.dataset.tags %}<span class="tag tag--sm">{{ t }}</span> {% endfor %}</p>{% endif %}
+    {% if include.dataset.tags %}<p class="card__tags">{% for t in include.dataset.tags %}<span class="tag tag--sm">{{ t }}</span>{% endfor %}</p>{% endif %}
     {% if include.dataset.summary %}<p class="card__text">{{ include.dataset.summary }}</p>{% endif %}
-    <p class="card__meta">
-      {% if include.dataset.year %}<span>{{ include.dataset.year }}</span>{% endif %}
-      {% if include.dataset.size %}<span>规模：{{ include.dataset.size }}</span>{% endif %}
-      {% if include.dataset.license %}<span>许可：{{ include.dataset.license }}</span>{% endif %}
-    </p>
+    <dl class="card__specs">
+      {% if include.dataset.year %}<div><dt>年份</dt><dd>{{ include.dataset.year }}</dd></div>{% endif %}
+      {% if include.dataset.size %}<div><dt>规模</dt><dd>{{ include.dataset.size }}</dd></div>{% endif %}
+      {% if include.dataset.license %}<div><dt>许可</dt><dd>{{ include.dataset.license }}</dd></div>{% endif %}
+    </dl>
   </div>
-  <a class="card__action button" href="{{ include.dataset.url | relative_url }}">详情 →</a>
+  <a class="card__more" href="{{ include.dataset.url | relative_url }}" aria-label="查看数据集：{{ include.dataset.title }}">详情<span class="card__arrow" aria-hidden="true">→</span></a>
 </article>
