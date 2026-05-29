@@ -657,14 +657,46 @@ body.is-scrolled .masthead{border-bottom-color:transparent;box-shadow:var(--shad
 /* ============================================================
    26. ATMOSPHERIC IMAGERY (P1) — 缺图时回退当前观感，放图即自动生效
    ============================================================ */
-body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:url('/assets/img/paper-grain.png');background-size:256px 256px;mix-blend-mode:multiply;opacity:.045}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:url('/assets/img/paper-grain.webp');background-size:256px 256px;mix-blend-mode:multiply;opacity:.05}
 .hero{background-color:var(--paper);background-image:linear-gradient(180deg,rgba(251,248,241,.30) 0%,rgba(251,248,241,.55) 45%,var(--paper) 88%),url('/assets/img/hero-timeflow.webp');background-repeat:no-repeat,no-repeat;background-position:center top,right -6% top -10%;background-size:cover,78% auto}
 .hero::before{z-index:0}
 .hero__inner{position:relative;z-index:2}
 .band--pi{position:relative;overflow:hidden}
-.band--pi::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:url('/assets/img/caisson-watermark.webp') right center/52% auto no-repeat;opacity:.06;mask-image:linear-gradient(90deg,transparent 0%,#000 70%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 70%)}
+.band--pi::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:url('/assets/img/caisson-watermark.webp') right center/46% auto no-repeat;opacity:.16;mask-image:linear-gradient(90deg,transparent 0%,#000 72%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 72%)}
 .band--pi>.wrap{position:relative;z-index:1}
 .recruit{isolation:isolate}
 .recruit__bg{position:absolute;inset:0;z-index:0;pointer-events:none;background:url('/assets/img/recruit-mineral.webp') center/cover no-repeat;mix-blend-mode:screen;opacity:.22;mask-image:linear-gradient(120deg,#000 30%,transparent 92%);-webkit-mask-image:linear-gradient(120deg,#000 30%,transparent 92%)}
 .recruit__lead,.recruit .bullet-list{position:relative;z-index:1}
 @media (prefers-contrast:more){.hero{background-image:none}.recruit__bg,.band--pi::before,body::after{display:none}}
+
+/* ============================================================
+   27. HERO — image-backed dark band（image_1 为深蓝氛围图，hero 翻为深色+亮字）
+   左重渐变 scrim 保证左侧标题可读，右上放出数据流光晕
+   ============================================================ */
+.hero{
+  background-color:var(--navy);
+  background-image:
+    linear-gradient(105deg, rgba(4,25,42,.95) 0%, rgba(4,25,42,.82) 34%, rgba(5,34,56,.50) 62%, rgba(6,42,69,.60) 100%),
+    url('/assets/img/hero-timeflow.webp');
+  background-repeat:no-repeat,no-repeat;
+  background-position:center,center right;
+  background-size:cover,cover;
+  border-bottom:0;
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,.07);
+}
+.hero::before{display:none}
+.hero::after{top:-25%;right:-8%;width:62%;height:130%;background:radial-gradient(closest-side,rgba(242,168,29,.20),transparent 72%)}
+.hero__inner{position:relative;z-index:2}
+.hero .eyebrow--hero{color:var(--gold-bright)}
+.hero .eyebrow--hero::before{background:var(--gold-bright)}
+.hero__title{color:#fff}
+.hero__title-en{color:var(--gold-bright)}
+.hero__lead{color:rgba(238,243,248,.90)}
+.hero__lead em{color:#fff}
+.hero__lead strong{color:#fff}
+.hero__domains{box-shadow:inset 0 1px 0 rgba(255,255,255,.16)}
+.hero__domain-idx{color:var(--gold-bright)}
+.hero__domain-zh{color:#fff}
+.hero__domain-en{color:rgba(238,243,248,.58)}
+.hero__domains li:not(:last-child)::after{background:linear-gradient(180deg,transparent,rgba(255,255,255,.20) 45%,rgba(255,255,255,.20) 55%,transparent)}
+@media (prefers-contrast:more){.hero{background-image:none;background-color:var(--navy)}}
