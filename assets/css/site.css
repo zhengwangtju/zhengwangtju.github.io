@@ -133,7 +133,7 @@ em{font-style:normal}
 .empty-state{color:var(--muted);font-style:italic}
 
 /* section header: 02 — 标题 — English */
-.section{margin:0 0 clamp(40px,6vw,72px)}
+.section{margin-bottom:clamp(40px,6vw,72px)}
 .section-head{
   display:flex;align-items:baseline;gap:1rem;
   margin:0 0 1.6rem;padding-bottom:.9rem;
