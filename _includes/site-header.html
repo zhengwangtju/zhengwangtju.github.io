@@ -1,0 +1,14 @@
+{%- assign info = site.data.site_info -%}
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__photo-link" href="{{ '/' | relative_url }}">
+      <img class="site-header__photo" src="{{ info.photo | relative_url }}" alt="{{ info.name_zh }} 照片" width="120" height="160">
+    </a>
+    <div class="site-header__id">
+      <p class="site-header__name">{{ info.title_line }}</p>
+      {%- for line in info.affiliations %}
+      <p class="site-header__affil">{{ line }}</p>
+      {%- endfor %}
+    </div>
+  </div>
+</header>

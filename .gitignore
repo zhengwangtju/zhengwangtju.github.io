@@ -21,3 +21,6 @@ _site/
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# Local-only working doc (refactor plan / remaining visual-pass notes)
+REFACTOR-PLAN.md

@@ -1,0 +1,8 @@
+<article class="card project-card">
+  <div class="card__body">
+    {% if include.project.tag %}<span class="tag">{{ include.project.tag }}</span>{% endif %}
+    <h3 class="card__title">{{ include.project.title }}</h3>
+    {% if include.project.summary %}<p class="card__text">{{ include.project.summary }}</p>{% endif %}
+  </div>
+  <a class="card__action button" href="{{ include.project.url | relative_url }}">查看详情 →</a>
+</article>

@@ -1,0 +1,15 @@
+{%- assign c = site.data.site_info.contact -%}
+<footer class="site-footer">
+  <div class="container">
+    <h2 class="site-footer__title">联系方式</h2>
+    <ul class="site-footer__contacts">
+      <li><span class="site-footer__label">地址</span>{{ c.address }}</li>
+      <li><span class="site-footer__label">电话</span>{{ c.phone }}</li>
+      <li><span class="site-footer__label">邮箱</span><a href="mailto:{{ c.email }}">{{ c.email }}</a></li>
+      {%- if c.bilibili %}
+      <li><span class="site-footer__label">B 站</span>{{ c.bilibili }}</li>
+      {%- endif %}
+    </ul>
+    <p class="site-footer__copy">© {{ site.time | date: '%Y' }} {{ site.data.site_info.name_zh }} · 天津大学</p>
+  </div>
+</footer>

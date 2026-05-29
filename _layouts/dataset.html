@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="dataset-detail">
+  <div class="page-head">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.tags %}<p class="card__tags">{% for t in page.tags %}<span class="tag tag--sm">{{ t }}</span> {% endfor %}</p>{% endif %}
+  </div>
+
+  <dl class="meta-list">
+    {% if page.year %}<dt>年份</dt><dd>{{ page.year }}</dd>{% endif %}
+    {% if page.size %}<dt>规模</dt><dd>{{ page.size }}</dd>{% endif %}
+    {% if page.license %}<dt>许可</dt><dd>{{ page.license }}</dd>{% endif %}
+  </dl>
+
+  {% if page.download_url or page.paper_url %}
+  <p class="dataset-detail__actions">
+    {% if page.download_url %}<a class="button" href="{{ page.download_url }}">下载数据集</a>{% endif %}
+    {% if page.paper_url %}<a class="button button--ghost" href="{{ page.paper_url }}">相关论文</a>{% endif %}
+  </p>
+  {% endif %}
+
+  <div class="prose">{{ content }}</div>
+
+  <p class="back-link"><a href="{{ '/datasets.html' | relative_url }}">← 返回数据集列表</a></p>
+</article>

@@ -1,0 +1,7 @@
+<article class="card member-card">
+  {% if include.member.photo %}<img class="member-card__photo" src="{{ include.member.photo | relative_url }}" alt="{{ include.member.name }}" width="96" height="96" loading="lazy">{% endif %}
+  <h3 class="card__title">{{ include.member.name }}{% if include.member.name_en %} <span class="member-card__en">{{ include.member.name_en }}</span>{% endif %}</h3>
+  {% if include.member.role %}<p class="card__text">{{ include.member.role }}</p>{% endif %}
+  {% if include.member.year %}<p class="card__meta">{{ include.member.year }} 级</p>{% endif %}
+  {% if include.member.email %}<p class="card__meta"><a href="mailto:{{ include.member.email }}">{{ include.member.email }}</a></p>{% endif %}
+</article>

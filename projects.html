@@ -1,0 +1,26 @@
+---
+layout: page
+title: 项目
+subtitle: Projects & Research Grants
+active_nav: projects
+description: 王征课题组代表性项目与科研课题。
+---
+<section class="section">
+  <h2 class="section-title">代表性项目</h2>
+  <div class="card-grid">
+    {%- assign projs = site.projects | sort: 'order' %}
+    {%- for p in projs %}{% include project-card.html project=p %}{% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">科研项目</h2>
+  <ul class="grant-list">
+    {%- for g in site.data.grants %}
+    <li class="grant">
+      <span class="grant__title">{{ g.title }}</span>
+      <span class="grant__meta">{{ g.funder }} · {{ g.period }} · {{ g.role }}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

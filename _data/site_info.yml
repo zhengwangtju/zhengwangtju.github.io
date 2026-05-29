@@ -1,0 +1,20 @@
+# 个人 / 课题组身份信息 —— 顶部 masthead 与底部联系方式共用此处单一来源。
+name_zh: 王征
+group_name: 记忆与推理课题组
+photo: /assets/img/picture.jpg
+
+# masthead 主标题行（以 index.html 最新版为准）
+title_line: 王征（Zheng Wang），天津大学智能与计算学部人工智能学院，教授 & 博导
+
+# 身份 / 头衔（逐行展示）
+affiliations:
+  - 教育部城市智能与数字治理工程研究中心 秘书长（中心负责人：胡清华）
+  - 天津市机器学习重点实验室骨干、记忆与推理课题组负责人
+  - 深耕面向智能电网、智慧管网、智慧敦煌、智慧教育的应用研究
+  - 《算法设计与分析》天津市一流课程负责人
+
+contact:
+  address: 天津大学北洋园校区 55 楼 A214
+  phone: 18622012862（微信同号）
+  email: wzheng@tju.edu.cn
+  bilibili: TJU-AI4Science

@@ -1,0 +1,33 @@
+# ── Site ──────────────────────────────────────────────────────────────
+title: 王征课题组
+description: 天津大学 王征 教授课题组 —— 记忆与推理、时序预测大模型、AI for Science
+lang: zh-CN
+url: "https://zhengwangtju.github.io"
+baseurl: ""
+
+# ── Build ─────────────────────────────────────────────────────────────
+markdown: kramdown
+encoding: utf-8
+
+# ── Collections ───────────────────────────────────────────────────────
+# 加一个项目 / 数据集 = 在对应目录下新增一个 .md 文件，自动生成详情页并被列表收录。
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  datasets:
+    output: true
+    permalink: /datasets/:name/
+
+# ── Front-matter defaults ─────────────────────────────────────────────
+defaults:
+  - scope: { path: "", type: "projects" }
+    values: { layout: project, active_nav: projects }
+  - scope: { path: "", type: "datasets" }
+    values: { layout: dataset, active_nav: datasets }
+
+# ── Exclude from build ────────────────────────────────────────────────
+exclude:
+  - README.md
+  - REFACTOR-PLAN.md
+  - .gitignore

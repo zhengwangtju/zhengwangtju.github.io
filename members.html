@@ -1,0 +1,35 @@
+---
+layout: page
+title: 成员
+subtitle: Members
+active_nav: members
+description: 王征课题组成员、培养理念与毕业生。
+---
+{%- assign m = site.data.members -%}
+<section class="section">
+  <h2 class="section-title">培养理念</h2>
+  <ul class="bullet-list">
+    {%- for line in m.philosophy %}<li>{{ line }}</li>{% endfor %}
+  </ul>
+</section>
+
+<section class="section">
+  <h2 class="section-title">指导教师</h2>
+  <div class="card-grid">
+    {%- for person in m.faculty %}{% include member-card.html member=person %}{% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">在读学生</h2>
+  <div class="card-grid">
+    {%- for person in m.students %}{% include member-card.html member=person %}{% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">毕业生 / 校友<span class="section-note">（排名不分先后）</span></h2>
+  <ul class="alumni-list">
+    {%- for name in m.alumni %}<li class="alumni">{{ name }}</li>{% endfor %}
+  </ul>
+</section>

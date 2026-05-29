@@ -1,0 +1,23 @@
+# 论文 —— 加一篇 = 追加一条；模板自动按 year 倒序分组。
+# ↓↓↓ 以下为占位条目，展示板块骨架；真实论文数据待补充后替换。
+- title: （占位）多智能体记忆与推理相关工作 —— 标题待补充
+  authors: 课题组成员, Zheng Wang
+  venue: CVPR
+  year: 2025
+  type: 会议
+  links:
+    pdf: "#"
+    code: "#"
+- title: （占位）时序预测大模型相关工作 —— 标题待补充
+  authors: 课题组成员, Zheng Wang
+  venue: AAAI
+  year: 2025
+  type: 会议
+  links:
+    pdf: "#"
+- title: （占位）AI for Science 相关工作 —— 标题待补充
+  authors: Zheng Wang, et al.
+  venue: IEEE Transactions on Image Processing
+  year: 2024
+  type: 期刊
+  links: {}

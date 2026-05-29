@@ -1,0 +1,13 @@
+<article class="card dataset-card">
+  <div class="card__body">
+    <h3 class="card__title"><a href="{{ include.dataset.url | relative_url }}">{{ include.dataset.title }}</a></h3>
+    {% if include.dataset.tags %}<p class="card__tags">{% for t in include.dataset.tags %}<span class="tag tag--sm">{{ t }}</span> {% endfor %}</p>{% endif %}
+    {% if include.dataset.summary %}<p class="card__text">{{ include.dataset.summary }}</p>{% endif %}
+    <p class="card__meta">
+      {% if include.dataset.year %}<span>{{ include.dataset.year }}</span>{% endif %}
+      {% if include.dataset.size %}<span>规模：{{ include.dataset.size }}</span>{% endif %}
+      {% if include.dataset.license %}<span>许可：{{ include.dataset.license }}</span>{% endif %}
+    </p>
+  </div>
+  <a class="card__action button" href="{{ include.dataset.url | relative_url }}">详情 →</a>
+</article>

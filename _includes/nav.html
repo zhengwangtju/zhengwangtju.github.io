@@ -1,0 +1,12 @@
+<nav class="site-nav" aria-label="主导航">
+  <ul class="container site-nav__list">
+    {%- for item in site.data.nav %}
+    {%- assign is_active = false %}
+    {%- if page.active_nav == item.id %}{% assign is_active = true %}{% endif %}
+    <li class="site-nav__item">
+      <a class="site-nav__link{% if is_active %} is-active{% endif %}"
+         href="{{ item.url | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+    </li>
+    {%- endfor %}
+  </ul>
+</nav>

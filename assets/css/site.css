@@ -1,0 +1,126 @@
+/* ============================================================
+   王征课题组主页 · 基础样式（骨架）
+   设计变量集中在 :root —— 后续整体视觉优化主要改这里。
+   说明：本文件为「结构 + 中性基线」，非最终视觉稿。
+   ============================================================ */
+:root{
+  --brand:#022643;          /* 主品牌色（深蓝，沿用原站） */
+  --brand-soft:#0b3a5e;
+  --accent:#f7ab1c;         /* 强调色（金，沿用原站按钮） */
+  --accent-2:#ffba00;
+  --ink:#1c2b36;
+  --muted:#5b6b77;
+  --line:#dde4ea;
+  --bg:#f4f6f8;
+  --surface:#ffffff;
+  --container:1040px;
+  --gap:24px;
+  --radius:10px;
+  --shadow:0 1px 3px rgba(2,38,67,.08), 0 4px 16px rgba(2,38,67,.06);
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.7}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+.skip-link{position:absolute;left:-999px;top:0}
+.skip-link:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:100;border-radius:6px}
+
+/* ── masthead ── */
+.site-header{background:var(--brand);color:#eaf1f7}
+.site-header__inner{display:flex;gap:20px;align-items:center;padding:22px 20px}
+.site-header__photo{width:96px;height:auto;border-radius:8px;border:2px solid rgba(255,255,255,.25)}
+.site-header__name{margin:0 0 6px;font-size:1.05rem;font-weight:600;color:#fff}
+.site-header__affil{margin:2px 0;font-size:.85rem;color:#b9cbd9}
+
+/* ── nav ── */
+.site-nav{background:var(--brand-soft);position:sticky;top:0;z-index:30}
+.site-nav__list{display:flex;flex-wrap:wrap;gap:2px;list-style:none;margin:0;padding:0}
+.site-nav__link{display:block;padding:14px 18px;color:#cfe0ec;font-size:1rem;border-bottom:3px solid transparent}
+.site-nav__link:hover{color:#fff;text-decoration:none}
+.site-nav__link.is-active{color:#fff;border-bottom-color:var(--accent)}
+
+/* ── page scaffold ── */
+.page{padding:32px 20px 56px}
+.page-head{margin:8px 0 28px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.page-title{margin:0;font-size:1.7rem;color:var(--brand)}
+.page-subtitle{margin:6px 0 0;color:var(--muted);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+.section{margin:0 0 38px}
+.section-title{font-size:1.25rem;color:var(--brand);margin:0 0 16px;padding-left:12px;border-left:4px solid var(--accent)}
+.section-note{font-size:.8rem;color:var(--muted);font-weight:400;margin-left:6px}
+.prose{margin:0 0 14px}
+.empty-state{color:var(--muted)}
+
+/* ── text lists ── */
+.bullet-list{margin:0;padding-left:1.3em}
+.bullet-list li{margin:.4em 0}
+.bullet-list ul{margin:.3em 0;padding-left:1.2em}
+.news-list,.grant-list,.pub-list,.alumni-list{list-style:none;margin:0;padding:0}
+.news-item{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.news-item__date{flex:0 0 6.5em;color:var(--muted);font-variant-numeric:tabular-nums;font-size:.9rem}
+.grant{padding:10px 0;border-bottom:1px solid var(--line)}
+.grant__title{display:block;font-weight:600;color:var(--brand)}
+.grant__meta{display:block;color:var(--muted);font-size:.9rem;margin-top:2px}
+
+/* ── cards ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--gap)}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card__body{padding:18px;flex:1}
+.card__title{margin:.2em 0 .4em;font-size:1.05rem;color:var(--brand)}
+.card__text{margin:0;font-size:.92rem}
+.card__meta{margin:.4em 0 0;color:var(--muted);font-size:.82rem;display:flex;gap:12px;flex-wrap:wrap}
+.card__tags{margin:.2em 0 .5em}
+.card__action{display:block;text-align:center;padding:12px;background:var(--brand);color:#fff;font-size:.9rem}
+.card__action:hover{background:var(--brand-soft);text-decoration:none}
+.member-card{text-align:center;padding:20px}
+.member-card__photo{width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 auto 12px}
+.member-card__en{color:var(--muted);font-weight:400;font-size:.85rem}
+
+/* ── tags / buttons ── */
+.tag{display:inline-block;padding:3px 10px;background:#e8f0f6;color:var(--brand-soft);border-radius:999px;font-size:.78rem;margin-bottom:8px}
+.tag--sm{font-size:.72rem;padding:2px 8px;margin:0 4px 4px 0}
+.button{display:inline-block;padding:9px 18px;background:linear-gradient(135deg,var(--accent-2),var(--accent));color:var(--brand);border-radius:6px;font-size:.9rem;font-weight:600}
+.button:hover{filter:brightness(1.03);text-decoration:none}
+.button--ghost{background:none;border:1px solid var(--line);color:var(--brand-soft)}
+
+/* ── publications ── */
+.pub{padding:12px 0;border-bottom:1px solid var(--line)}
+.pub__title{margin:0;font-weight:600;color:var(--brand)}
+.pub__meta{margin:2px 0;color:var(--muted);font-size:.9rem}
+.pub__links{margin:4px 0 0;display:flex;gap:14px;font-size:.85rem}
+
+/* ── detail (project / dataset) ── */
+.img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.img-grid__item{margin:0}
+.img-grid__item img{width:100%;border:1px solid var(--line);border-radius:8px}
+.meta-list{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0 0 18px}
+.meta-list dt{color:var(--muted)}
+.meta-list dd{margin:0}
+.dataset-detail__actions{display:flex;gap:12px;margin:0 0 22px}
+.back-link{margin-top:30px}
+
+/* ── alumni chips ── */
+.alumni-list{display:flex;flex-wrap:wrap;gap:10px}
+.alumni{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:.9rem}
+
+/* ── footer ── */
+.site-footer{background:var(--brand);color:#cfe0ec;margin-top:40px}
+.site-footer .container{padding-top:30px;padding-bottom:30px}
+.site-footer__title{margin:0 0 14px;font-size:1.1rem;color:#fff}
+.site-footer__contacts{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px}
+.site-footer__contacts a{color:#fff}
+.site-footer__label{display:inline-block;width:3.5em;color:#8fb0c7}
+.site-footer__copy{margin:0;font-size:.82rem;color:#8fb0c7}
+
+/* ── responsive ── */
+@media (max-width:640px){
+  .site-header__inner{flex-direction:column;text-align:center}
+  .site-header__photo{width:84px}
+  .site-nav__link{padding:12px 12px;font-size:.95rem}
+  .page-title{font-size:1.4rem}
+  .news-item{flex-direction:column;gap:2px}
+  .news-item__date{flex-basis:auto}
+}
