@@ -317,7 +317,7 @@ em{font-style:normal}
 
 /* ── 9. Features ───────────────────────────────────────── */
 .feature-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
   gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.6rem;
 }
 .feature{background:var(--paper);padding:1.4rem 1.4rem;display:flex;flex-direction:column;gap:.6rem}
@@ -360,7 +360,7 @@ em{font-style:normal}
 .detail__subtitle{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--muted);margin:.6rem 0 0}
 
 /* ── 13. Cards ─────────────────────────────────────────── */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:var(--gap)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:var(--gap)}
 .card{
   display:flex;flex-direction:column;background:var(--paper);
   border:1px solid var(--line);border-radius:var(--radius);
@@ -398,7 +398,7 @@ em{font-style:normal}
 .card:hover .card__arrow{transform:translateX(4px)}
 
 /* ── 14. Members ───────────────────────────────────────── */
-.member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--gap)}
+.member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:var(--gap)}
 .member-card{
   text-align:center;padding:1.8rem 1.2rem;background:var(--paper);
   border:1px solid var(--line);border-radius:var(--radius);
@@ -458,7 +458,7 @@ em{font-style:normal}
 /* ── 17. Detail pages ──────────────────────────────────── */
 .detail .prose__label{}
 .detail .prose{max-width:none}
-.img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--gap)}
+.img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
 .img-grid__item{margin:0}
 .img-grid__item img{width:100%;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
 .meta-list{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:0 0 1.8rem}
@@ -552,6 +552,7 @@ html.no-js [data-reveal]{opacity:1!important;transform:none!important}
 
 /* ── 22. Responsive ────────────────────────────────────── */
 @media (max-width:900px){
+  .wordmark__en{display:none}          /* 收起英文副标，避免 iPad 竖屏导航换行 */
   .pi{grid-template-columns:200px 1fr;gap:32px}
   .research{grid-template-columns:1fr;gap:32px}
   .site-footer__inner{grid-template-columns:1fr 1fr}
