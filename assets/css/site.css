@@ -43,6 +43,29 @@
   --gap:clamp(18px,2.4vw,30px);
   --radius:3px;
   --ease:cubic-bezier(.22,.61,.36,1);
+
+  /* ── depth: warm-tinted multi-layer shadows (navy key + warm contact + top inset highlight) ── */
+  --sh-navy-1:rgba(6,42,69,.05); --sh-navy-2:rgba(6,42,69,.08);
+  --sh-navy-3:rgba(6,42,69,.12); --sh-navy-4:rgba(6,42,69,.16);
+  --sh-warm:rgba(43,30,12,.06);  --sh-warm-2:rgba(43,30,12,.10);
+  --hl-top:inset 0 1px 0 rgba(255,255,255,.55);
+  --hl-top-soft:inset 0 1px 0 rgba(255,255,255,.4);
+  --shadow-xs:var(--hl-top-soft),0 1px 1px var(--sh-warm),0 1px 2px var(--sh-navy-1);
+  --shadow-sm:var(--hl-top),0 1px 1px var(--sh-warm),0 2px 4px var(--sh-navy-2),0 4px 8px var(--sh-navy-1);
+  --shadow-md:var(--hl-top),0 1px 2px var(--sh-warm-2),0 4px 10px -2px var(--sh-navy-2),0 10px 22px -8px var(--sh-navy-3);
+  --shadow-lg:var(--hl-top),0 2px 4px var(--sh-warm-2),0 8px 18px -4px var(--sh-navy-3),0 20px 40px -12px var(--sh-navy-4);
+  --shadow-xl:0 4px 8px var(--sh-warm-2),0 14px 30px -6px var(--sh-navy-3),0 34px 64px -16px var(--sh-navy-4);
+  --shadow-press:inset 0 2px 4px var(--sh-navy-3),inset 0 1px 1px var(--sh-warm-2);
+  --shadow-glow-gold:0 0 0 3px rgba(242,168,29,.22);
+  --shadow-sticky:inset 0 -1px 0 rgba(255,255,255,.4),0 1px 0 var(--line),0 6px 16px -10px var(--sh-navy-3);
+
+  /* ── refined hairlines (replace flat 1px lines) ── */
+  --hair:linear-gradient(90deg,var(--line-2) 0%,var(--line) 35%,rgba(211,199,175,.22) 88%,transparent 100%);
+  --hair-center:linear-gradient(180deg,transparent 0%,var(--line) 22%,var(--line-2) 50%,var(--line) 78%,transparent 100%);
+  --press-dark:rgba(6,42,69,.10); --press-light:rgba(255,255,255,.55);
+
+  /* ── motion timing ── */
+  --ease-out:cubic-bezier(.4,0,.2,1); --dur-1:.2s; --dur-2:.32s; --dur-3:.62s;
 }
 
 /* ── 2. Reset & base ───────────────────────────────────── */
@@ -160,14 +183,6 @@ em{font-style:normal}
 }
 .wordmark{display:flex;align-items:center;gap:.85rem;color:var(--navy)}
 .wordmark:hover{color:var(--navy)}
-.wordmark__mark{
-  width:24px;height:24px;flex:none;position:relative;
-  background:var(--navy);transform:rotate(45deg);border-radius:2px;
-}
-.wordmark__mark::after{
-  content:"";position:absolute;inset:6px;background:var(--gold-bright);border-radius:1px;
-}
-.wordmark__mark--light{background:var(--on-navy)}
 .wordmark__text{display:flex;flex-direction:column;line-height:1.15}
 .wordmark__zh{font-weight:700;font-size:1.06rem;letter-spacing:.04em;color:var(--navy)}
 .wordmark__en{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.18em}
@@ -480,7 +495,6 @@ em{font-style:normal}
   display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:clamp(28px,4vw,56px);
   padding-block:clamp(40px,5vw,64px);
 }
-.site-footer__brand .wordmark__mark{transform:rotate(45deg);margin-bottom:1rem}
 .site-footer__lab{font-size:1.25rem;font-weight:700;color:#fff;margin:0}
 .site-footer__lab-en{font-family:var(--serif);font-style:italic;color:var(--gold-bright);margin:.2rem 0 .9rem}
 .site-footer__affil{font-size:.85rem;margin:0;color:var(--on-navy-muted)}
@@ -505,11 +519,35 @@ em{font-style:normal}
 .error-page__code{font-family:var(--serif);font-weight:600;font-size:clamp(5rem,16vw,11rem);line-height:1;color:var(--navy);margin:.4rem 0}
 .error-page__msg{font-size:1.1rem;color:var(--ink-soft);margin:0 0 2rem}
 
-/* ── 21. Motion ────────────────────────────────────────── */
+/* ── 21. Motion ── scroll-triggered reveal + micro-interactions ── */
+html.no-js [data-reveal]{opacity:1!important;transform:none!important}
 @media (prefers-reduced-motion:no-preference){
-  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-  [data-reveal]{opacity:0;animation:rise .8s var(--ease) both;animation-delay:calc(var(--d,0) * 90ms)}
-  .hero [data-reveal]{animation-duration:.9s}
+  [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity var(--dur-3) var(--ease),transform var(--dur-3) var(--ease);transition-delay:calc(var(--d,0) * 70ms);will-change:opacity,transform}
+  [data-reveal].is-visible{opacity:1;transform:none}
+  .hero [data-reveal]{transform:translateY(18px);transition-duration:.72s}
+  .masthead[data-reveal],.masthead[data-reveal].is-visible{transform:none}
+
+  .img-grid__item{overflow:hidden}
+  .img-grid__item img{transition:transform var(--dur-3) var(--ease)}
+  .img-grid__item:hover img{transform:scale(1.03)}
+  .pi__photo{transition:box-shadow var(--dur-3) var(--ease),transform var(--dur-3) var(--ease)}
+  .pi__media:hover .pi__photo{transform:translate(-2px,-2px)}
+  .timeline__text::before{transition:transform var(--dur-1) var(--ease-out),box-shadow var(--dur-1) var(--ease-out)}
+  .timeline__item:hover .timeline__text::before{transform:translateX(-50%) scale(1.18);box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--gold-wash),0 1px 2px rgba(6,42,69,.18)}
+  .timeline__item:hover .timeline__text{color:var(--ink)}
+  .alumni{transition:border-color var(--dur-1) var(--ease-out),color var(--dur-1) var(--ease-out),background var(--dur-1) var(--ease-out),transform var(--dur-1) var(--ease-out),box-shadow var(--dur-1) var(--ease-out)}
+  .alumni:hover{transform:translateY(-1px)}
+  .prose a,.timeline__text a,.pub__links a,.site-footer__list a{background-image:linear-gradient(var(--gold-bright),var(--gold-bright));background-size:0% 1.5px;background-repeat:no-repeat;background-position:left 92%;transition:background-size var(--dur-2) var(--ease-out),color var(--dur-1) var(--ease-out)}
+  .prose a:hover,.timeline__text a:hover,.pub__links a:hover,.site-footer__list a:hover{background-size:100% 1.5px}
+  .site-nav__link::after{transform-origin:right}
+  .site-nav__link:hover::after,.site-nav__link.is-active::after{transform-origin:left}
+}
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1!important;transform:none!important;transition:none}
+  .card:hover,.member-card:hover,.button:hover,.alumni:hover{transform:none}
+  .pi__media:hover .pi__photo{transform:none}
+  .img-grid__item:hover img{transform:none}
+  .timeline__item:hover .timeline__text::before{transform:translateX(-50%)}
 }
 
 /* ── 22. Responsive ────────────────────────────────────── */
@@ -539,3 +577,93 @@ em{font-style:normal}
   .site-footer__inner{grid-template-columns:1fr}
   .site-footer__base{flex-direction:column}
 }
+
+/* ============================================================
+   23. LINE & DIVIDER REFINEMENT — 去掉"简笔画"硬线
+   渐隐 hairline · letterpress 凹槽 · 工艺化 bullet
+   ============================================================ */
+.section-head{position:relative;border-bottom:0;padding-bottom:1rem}
+.section-head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,var(--gold) 0,var(--gold) 2.2rem,transparent 2.2rem),var(--hair);background-repeat:no-repeat}
+.section-head::before{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.6) 0,rgba(255,255,255,.5) 30%,transparent 80%)}
+.section-head--year::after{background:linear-gradient(90deg,var(--navy) 0,var(--navy) 2.2rem,transparent 2.2rem),linear-gradient(90deg,var(--line-2) 0%,var(--line-2) 40%,rgba(211,199,175,.25) 90%,transparent 100%);background-repeat:no-repeat}
+
+.hero,.band{border-bottom:0}
+.hero{box-shadow:inset 0 -1px 0 var(--press-dark),inset 0 -2px 0 var(--press-light)}
+.band{box-shadow:inset 0 -1px 0 var(--press-dark),inset 0 -2px 0 var(--press-light)}
+.hero__domains{border-top:0;box-shadow:inset 0 1px 0 var(--press-light),inset 0 2px 0 var(--press-dark);padding-top:2px}
+.hero__domains li{position:relative;border-right:0}
+.hero__domains li:not(:last-child)::after{content:"";position:absolute;top:.4rem;bottom:.4rem;right:0;width:1px;background:var(--hair-center)}
+
+.lined-list li{border-bottom:0;position:relative;padding:.72em 0 .72em 1.7em;background:var(--hair) bottom/100% 1px no-repeat}
+.lined-list li:last-child{background:none}
+.lined-list li::before{content:"\2013";position:absolute;left:.15em;top:.62em;width:auto;height:auto;border:0;transform:none;background:none;font-family:var(--serif);font-size:1.02em;font-weight:600;color:var(--gold);line-height:1;letter-spacing:.02em}
+.feature__key::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);transform:none;box-shadow:0 0 0 3px var(--gold-wash)}
+.timeline::before{background:linear-gradient(180deg,transparent 0,var(--line-2) 12%,var(--line-2) 88%,transparent 100%)}
+.timeline__text::before{width:11px;height:11px;border:0;background:var(--gold);box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--line-2),0 1px 2px rgba(6,42,69,.18);transform:translateX(-50%)}
+.pi__facts{border-top:0;box-shadow:inset 0 1px 0 var(--press-light);background:var(--hair) top/100% 1px no-repeat}
+.pi__facts li::before{content:"\2013";font-family:var(--serif);font-weight:600;letter-spacing:.06em}
+.course,.pub,.grant{border-bottom:0;background:var(--hair) bottom/100% 1px no-repeat}
+.course:last-child,.pub:last-child,.grant:last-child{background:none}
+@media (max-width:680px){
+  .hero__domains li{border-bottom:0!important}
+  .hero__domains li:not(:last-child)::after{display:none}
+  .hero__domains li:not(:last-child){background:var(--hair) bottom/100% 1px no-repeat}
+}
+@media (prefers-contrast:more){
+  :root{--hair:linear-gradient(90deg,var(--line-2),var(--line-2))}
+  .section-head::after{background:var(--line-2)}
+}
+
+/* ============================================================
+   24. ELEVATION — 阴影是唯一的深度语言（覆盖前面扁平规则）
+   ============================================================ */
+.card{box-shadow:var(--shadow-xs);transition:border-color var(--dur-2) var(--ease),transform var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+.card:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:var(--shadow-md)}
+.card__more{box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.domain-grid,.feature-grid,.meta-list{box-shadow:var(--shadow-xs)}
+.recruit{box-shadow:0 2px 6px var(--sh-warm-2),0 14px 30px -8px var(--sh-navy-4),0 28px 56px -16px rgba(6,42,69,.22)}
+.member-card{box-shadow:var(--shadow-xs);transition:border-color var(--dur-2) var(--ease),transform var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+.member-card:hover{transform:translateY(-2px);border-color:var(--line-2);box-shadow:var(--shadow-sm)}
+.member-card__photo{box-shadow:var(--hl-top-soft),0 2px 6px -1px var(--sh-navy-2)}
+.pi__photo{box-shadow:var(--hl-top-soft),0 6px 16px -6px var(--sh-navy-3),18px 18px 0 -2px var(--paper-3),18px 18px 0 -1px var(--line-2)}
+.img-grid__item img{box-shadow:var(--shadow-sm)}
+.pub__venue,.prose__label{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 1px 1.5px var(--sh-warm)}
+.tag{box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 1px 1.5px var(--sh-warm)}
+.button{box-shadow:var(--hl-top),0 1px 2px var(--sh-warm-2),0 3px 8px -2px rgba(6,42,69,.28);transition:background var(--dur-1) var(--ease-out),transform var(--dur-1) var(--ease-out),box-shadow var(--dur-2) var(--ease-out)}
+.button:hover{transform:translateY(-2px);box-shadow:var(--hl-top),0 2px 4px var(--sh-warm-2),0 8px 18px -4px rgba(6,42,69,.34)}
+.button:active{transform:translateY(0);box-shadow:var(--shadow-press)}
+.button--ghost{box-shadow:none}
+.button--ghost:hover{box-shadow:var(--shadow-xs)}
+.masthead{transition:box-shadow var(--dur-2) var(--ease),background var(--dur-2) var(--ease)}
+body.is-scrolled .masthead{border-bottom-color:transparent;box-shadow:var(--shadow-sticky)}
+.site-footer{box-shadow:inset 0 1px 0 rgba(255,255,255,.06),inset 0 14px 28px -18px rgba(0,0,0,.5)}
+.site-footer::before{height:2px}
+@media (max-width:680px){.pi__photo{box-shadow:var(--hl-top-soft),0 5px 14px -6px var(--sh-navy-3),12px 12px 0 -1px var(--line-2)}}
+
+/* ============================================================
+   25. SEAL — 天津大学校徽嵌入（masthead 小徽 + footer 小徽 + 水印）
+   ============================================================ */
+.wordmark__seal{width:30px;height:30px;flex:none;object-fit:contain;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6)) drop-shadow(0 1px 2px rgba(6,42,69,.18));transition:transform var(--dur-2) var(--ease),filter var(--dur-2) var(--ease)}
+.wordmark:hover .wordmark__seal{transform:rotate(-4deg) scale(1.04);filter:drop-shadow(0 1px 0 rgba(255,255,255,.7)) drop-shadow(0 2px 5px rgba(6,42,69,.28))}
+.wordmark__seal+.wordmark__text{position:relative;padding-left:.95rem;margin-left:.1rem}
+.wordmark__seal+.wordmark__text::before{content:"";position:absolute;left:0;top:.1em;bottom:.1em;width:1px;background:linear-gradient(180deg,transparent,var(--line-2) 22%,var(--line-2) 78%,transparent);box-shadow:1px 0 0 rgba(255,255,255,.55)}
+.site-footer__brand{position:relative}
+.site-footer__brand::before{content:"";position:absolute;z-index:0;pointer-events:none;left:-18px;top:-22px;width:clamp(200px,16vw,260px);aspect-ratio:504/462;background:url('/assets/img/tju-seal.png') no-repeat center/contain;filter:brightness(0) invert(1);opacity:.05;mask-image:radial-gradient(circle,#000 60%,transparent 85%);-webkit-mask-image:radial-gradient(circle,#000 60%,transparent 85%)}
+.site-footer__brand>*{position:relative;z-index:1}
+.site-footer__seal{width:34px;height:34px;object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 1px 3px rgba(0,0,0,.35));opacity:.92;margin-bottom:1rem}
+@media (max-width:680px){.site-footer__brand::before{display:none}.wordmark__seal{width:26px;height:26px}}
+
+/* ============================================================
+   26. ATMOSPHERIC IMAGERY (P1) — 缺图时回退当前观感，放图即自动生效
+   ============================================================ */
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:url('/assets/img/paper-grain.png');background-size:256px 256px;mix-blend-mode:multiply;opacity:.045}
+.hero{background-color:var(--paper);background-image:linear-gradient(180deg,rgba(251,248,241,.30) 0%,rgba(251,248,241,.55) 45%,var(--paper) 88%),url('/assets/img/hero-timeflow.webp');background-repeat:no-repeat,no-repeat;background-position:center top,right -6% top -10%;background-size:cover,78% auto}
+.hero::before{z-index:0}
+.hero__inner{position:relative;z-index:2}
+.band--pi{position:relative;overflow:hidden}
+.band--pi::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:url('/assets/img/caisson-watermark.webp') right center/52% auto no-repeat;opacity:.06;mask-image:linear-gradient(90deg,transparent 0%,#000 70%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 70%)}
+.band--pi>.wrap{position:relative;z-index:1}
+.recruit{isolation:isolate}
+.recruit__bg{position:absolute;inset:0;z-index:0;pointer-events:none;background:url('/assets/img/recruit-mineral.webp') center/cover no-repeat;mix-blend-mode:screen;opacity:.22;mask-image:linear-gradient(120deg,#000 30%,transparent 92%);-webkit-mask-image:linear-gradient(120deg,#000 30%,transparent 92%)}
+.recruit__lead,.recruit .bullet-list{position:relative;z-index:1}
+@media (prefers-contrast:more){.hero{background-image:none}.recruit__bg,.band--pi::before,body::after{display:none}}
