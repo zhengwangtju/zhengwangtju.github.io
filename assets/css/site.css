@@ -276,6 +276,8 @@ em{font-style:normal}
 }
 .pi__name-en{font-family:var(--serif);font-style:italic;font-weight:500;font-size:.5em;color:var(--gold);margin-left:.5em;letter-spacing:.01em}
 .pi__role{font-size:.95rem;color:var(--muted);margin:0 0 1.3rem;letter-spacing:.02em}
+.pi__bio .prose{margin-bottom:1.4em;max-width:42rem}
+.pi__bio .prose:last-child{margin-bottom:0}
 .pi__facts{
   list-style:none;margin:1.5rem 0 0;padding:0;
   display:grid;gap:.55rem;border-top:1px solid var(--line);padding-top:1.3rem;
