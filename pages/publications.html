@@ -6,9 +6,8 @@ permalink: /publications/
 active_nav: publications
 description: 王征课题组论文发表列表。
 ---
-{%- assign raw_pubs = site.data.publications -%}
-{%- if raw_pubs -%}{%- assign pubs = raw_pubs | sort: 'year' | reverse -%}{%- else -%}{%- assign pubs = '' | split: '' -%}{%- endif -%}
-{%- assign years = pubs | map: 'year' | uniq -%}
+{%- assign pubs = site.data.publications -%}
+{%- if pubs -%}{%- assign years = pubs | map: 'year' | uniq | sort | reverse -%}{%- else -%}{%- assign pubs = '' | split: '' -%}{%- assign years = '' | split: '' -%}{%- endif -%}
 {% if pubs.size == 0 %}
 <p class="prose empty-state">论文数据待补充。</p>
 {% else %}
@@ -20,7 +19,7 @@ description: 王征课题组论文发表列表。
     <span class="section-en">{{ y }} Selected</span>
   </header>
   <ul class="pub-list">
-    {%- for pub in pubs %}{% if pub.year == y %}{% include components/publication-item.html pub=pub %}{% endif %}{% endfor %}
+    {%- assign yearpubs = pubs | where: 'year', y | sort: 'rank' -%}{%- for pub in yearpubs %}{% include components/publication-item.html pub=pub %}{% endfor %}
   </ul>
 </section>
 {%- endfor %}
