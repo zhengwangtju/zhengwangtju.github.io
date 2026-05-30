@@ -1,168 +1,199 @@
-# 论文 —— 真实数据（导师 2026-05 整理）。加一篇 = 追加一条；模板自动按 year 倒序分组。
+# 论文 —— 真实数据（导师 2026-05 整理）。每条带 rank（1=CCF A/SCI 一区，2=B/二区，3=C/三区），
+# 同一年内模板按 rank 由高到低排序。加一篇 = 追加一条并标好 rank。
 
-- title: "Visible-Infrared Camouflaged Object Detection"
-  authors: "Cheng Liu, Zheng Wang, Xinyu Yan, Meijun Sun, Qinghua Hu"
-  venue: "IEEE Transactions on Circuits and Systems for Video Technology"
-  year: 2025
-  type: "期刊"
 - title: "LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation"
   authors: "Xinyu Yan, Meijun Sun, Ge-Peng Ji, Fahad Shahbaz Khan, Salman Khan, Deng-Ping Fan"
   venue: "ICCV"
   year: 2025
   type: "会议"
   note: "CCF A 类"
+  rank: 1
 - title: "RecMamba: Reconstruction-Augmented Dual-Path Mamba for Time Series Forecasting"
   authors: "Y. Zhao, Z. Xie, Zheng Wang, et al."
   venue: "Knowledge-Based Systems"
   year: 2025
   type: "期刊"
+  note: "SCI 一区"
+  rank: 1
+- title: "Visible-Infrared Camouflaged Object Detection"
+  authors: "Cheng Liu, Zheng Wang, Xinyu Yan, Meijun Sun, Qinghua Hu"
+  venue: "IEEE Transactions on Circuits and Systems for Video Technology"
+  year: 2025
+  type: "期刊"
+  note: "CCF B 类"
+  rank: 2
 - title: "Influence-Based Channel Reweighting for Multivariate Time Series Forecasting"
   authors: "Yipu Liu, Zheng Wang, Qinghua Hu"
   venue: "ICASSP"
   year: 2025
   type: "会议"
   note: "CCF B 类"
+  rank: 2
 - title: "Gradient-guided Attention Fusion Network for Camouflaged Object Detection"
   authors: "Wenrui Li, Meijun Sun, Cheng Liu, Xinyu Yan, Zheng Wang"
   venue: "ICME"
   year: 2025
   type: "会议"
   note: "CCF B 类"
+  rank: 2
 - title: "Joint Edge and Regional Depth Enhancement Network for Camouflaged Object Detection"
   authors: "Qi Miao, Zheng Wang, Cheng Liu, Yan Zhou, Meijun Sun"
   venue: "ICASSP"
   year: 2025
   type: "会议"
   note: "CCF B 类"
+  rank: 2
 - title: "Distraction Suppression and Feature Modulation Network for Camouflaged Object Detection"
   authors: "Han Lyu, Meijun Sun, Haowei Ran, Yipu Liu, Xinyu Yan, Zheng Wang"
   venue: "ICME"
   year: 2025
   type: "会议"
   note: "CCF B 类"
+  rank: 2
 - title: "Boosting Lightweight Camouflaged Object Detection with Multi-Scale Context and Boundary Awareness"
   authors: "Zihan Xu, Zheng Wang, Haoyu Wang, Cheng Liu, Yan Zhou, Meijun Sun"
   venue: "ICASSP"
   year: 2025
   type: "会议"
   note: "CCF B 类"
+  rank: 2
 - title: "Multi-scale Re-weighted Attention Feature Fusion for Non-Intrusive Load Monitoring"
   authors: "Lingxi Yang, Meijun Sun, Haowei Ran, Yipu Liu, Zheng Wang"
   venue: "ICASSP"
   year: 2025
   type: "会议"
   note: "CCF B 类"
+  rank: 2
 - title: "Multi-Task Joint 3D Swin Transformer Learning for Segmentation and Classification of Hyperspectral Medicine Images"
   authors: "Dong Zhang, Meijun Sun"
   venue: "ICASSP"
   year: 2025
   type: "会议"
   note: "CCF B 类"
+  rank: 2
 - title: "Frequency-domain enhanced adaptive ensemble adversarial attack for protecting image privacy"
   authors: "Zhengchao Duan, Zheng Wang, Meijun Sun"
   venue: "ICIC"
   year: 2025
   type: "会议"
   note: "CCF C 类"
+  rank: 3
 - title: "Long-Term Autonomous Valet Parking—A Hierarchical Visual Semantic Mapping Approach"
   authors: "Wenchao Tong, Zheng Wang, Lei Tian"
   venue: "ICIC"
   year: 2025
   type: "会议"
   note: "CCF C 类"
+  rank: 3
 - title: "PWDformer: Deformable transformer for long-term series forecasting"
   authors: "Zheng Wang, Haowei Ran, Jinchang Ren, et al."
   venue: "Pattern Recognition"
   year: 2024
   type: "期刊"
   note: "SCI 一区"
-- title: "GloveTyping: A Hand Gesture Recognition System for Text Input Using a Hierarchical Framework with Attention Mechanism"
-  authors: "Xin Sheng, Zheng Wang, Haoyang Zhang, Tao Zhen, Pengfei Ren, Liang Xie, Ye Yan, Erwei Yin"
-  venue: "ICONIP"
-  year: 2024
-  type: "会议"
-  note: "CCF C 类"
-- title: "The Establishment of a Hypoxia Cellular Morphology Model Based on Deep Convolutional Neural Networks and Intelligent Screening of Anti-Hypoxia Drugs"
-  authors: "Xinyi Zhang, Zheng Wang"
-  venue: "CGI"
-  year: 2024
-  type: "会议"
-  note: "CCF C 类"
-- title: "Structural Highlight Network for Camouflaged Object Detection"
-  authors: "Zheng Wang, Junkun Zhao, Bifan Lai, Xinghuai Zheng"
-  venue: "ICME"
-  year: 2024
-  type: "会议"
-  note: "CCF B 类"
-- title: "Scribble Supervised Multimodal Medical Image Segmentation"
-  authors: "Zheng Wang, Xinliang Zhang, Junkun Zhao"
-  venue: "IJCNN"
-  year: 2024
-  type: "会议"
-  note: "CCF C 类"
+  rank: 1
 - title: "Camouflaged Object Segmentation based on Matching-Recognition-Refinement Network"
   authors: "Xinyu Yan, Meijun Sun, Yahong Han, Zheng Wang"
   venue: "IEEE Transactions on Neural Networks and Learning Systems"
   year: 2024
   type: "期刊"
   note: "SCI 一区 · IF 10.4"
+  rank: 1
 - title: "基于密集多尺度自注意力变换网络的伪装对象分割方法"
   authors: "闫馨宇, 孙美君, 王征, 韩亚洪"
   venue: "计算机辅助设计与图形学学报"
   year: 2024
   type: "期刊"
   note: "CCF A 类中文期刊"
+  rank: 1
+- title: "Structural Highlight Network for Camouflaged Object Detection"
+  authors: "Zheng Wang, Junkun Zhao, Bifan Lai, Xinghuai Zheng"
+  venue: "ICME"
+  year: 2024
+  type: "会议"
+  note: "CCF B 类"
+  rank: 2
+- title: "GloveTyping: A Hand Gesture Recognition System for Text Input Using a Hierarchical Framework with Attention Mechanism"
+  authors: "Xin Sheng, Zheng Wang, Haoyang Zhang, Tao Zhen, Pengfei Ren, Liang Xie, Ye Yan, Erwei Yin"
+  venue: "ICONIP"
+  year: 2024
+  type: "会议"
+  note: "CCF C 类"
+  rank: 3
+- title: "The Establishment of a Hypoxia Cellular Morphology Model Based on Deep Convolutional Neural Networks and Intelligent Screening of Anti-Hypoxia Drugs"
+  authors: "Xinyi Zhang, Zheng Wang"
+  venue: "CGI"
+  year: 2024
+  type: "会议"
+  note: "CCF C 类"
+  rank: 3
+- title: "Scribble Supervised Multimodal Medical Image Segmentation"
+  authors: "Zheng Wang, Xinliang Zhang, Junkun Zhao"
+  venue: "IJCNN"
+  year: 2024
+  type: "会议"
+  note: "CCF C 类"
+  rank: 3
 - title: "A Multi-step Fusion Network Based on Environmental Knowledge Graph for Camouflaged Object Detection"
   authors: "Zheng Wang, Wenjun Huang, Ruoxun Su, Xinyu Yan, Meijun Sun"
   venue: "BMVC"
   year: 2023
   type: "会议"
   note: "CCF C 类"
+  rank: 3
 - title: "Curiosity-Driven Salient Object Detection With Fragment Attention"
   authors: "Zheng Wang, Pengzhi Wang, Yahong Han, Xue Zhang, Meijun Sun, Qi Tian"
   venue: "IEEE Transactions on Image Processing"
   year: 2022
   type: "期刊"
   note: "SCI 一区 · CCF A 类"
+  rank: 1
 - title: "Video Saliency Prediction via Joint Discrimination and Local Consistency"
   authors: "Zheng Wang, Ziqi Zhou, Huchuan Lu, Qinghua Hu, Jianmin Jiang"
   venue: "IEEE Transactions on Cybernetics"
   year: 2022
   type: "期刊"
   note: "SCI 一区"
+  rank: 1
 - title: "Effective full-scale detection for salient object based on condensing-and-filtering network"
   authors: "Xinyu Yan, Meijun Sun, Yahong Han, Zheng Wang, Qi Tian"
   venue: "Pattern Recognition"
   year: 2022
   type: "期刊"
   note: "SCI 一区"
-- title: "Memory-based Transformer with shorter window and longer horizon for multivariate time series forecasting"
-  authors: "Liu Yang, Zheng Wang, Xinyang Yu, Xin Chen, Meijun Sun"
-  venue: "Pattern Recognition Letters"
-  year: 2022
-  type: "期刊"
-  note: "SCI 三区"
+  rank: 1
 - title: "MVVA-Net: A Video Aesthetic Quality Assessment Network with Cognitive Fusion of Multi-type Feature Based Strong Generalization"
   authors: "Min Li, Zheng Wang, Jinchang Ren, Meijun Sun"
   venue: "Cognitive Computation"
   year: 2022
   type: "期刊"
   note: "SCI 二区"
+  rank: 2
 - title: "PS-Net: Progressive Selection Network for Salient Object Detection"
   authors: "Jianyi Ren, Zheng Wang, Jinchang Ren"
   venue: "Cognitive Computation"
   year: 2022
   type: "期刊"
   note: "SCI 二区"
+  rank: 2
+- title: "Memory-based Transformer with shorter window and longer horizon for multivariate time series forecasting"
+  authors: "Liu Yang, Zheng Wang, Xinyang Yu, Xin Chen, Meijun Sun"
+  venue: "Pattern Recognition Letters"
+  year: 2022
+  type: "期刊"
+  note: "SCI 三区"
+  rank: 3
 - title: "Global and Local Sensitivity Guided Key Salient Object Re-Augmentation for Video Saliency Detection"
   authors: "Zheng Wang, Ziqi Zhou, Huchuan Lu, Jianmin Jiang"
   venue: "Pattern Recognition"
   year: 2020
   type: "期刊"
   note: "SCI 一区"
+  rank: 1
 - title: "Ranking Video Salient Object Detection"
   authors: "Zheng Wang, Xinyu Yan, Yahong Han, Meijun Sun"
   venue: "ACM MM"
   year: 2019
   type: "会议"
   note: "CCF A 类"
+  rank: 1
