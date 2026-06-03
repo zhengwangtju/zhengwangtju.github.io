@@ -1,7 +1,23 @@
-<article class="member-card">
-  {% if include.member.photo %}<img class="member-card__photo" src="{{ include.member.photo | relative_url }}" alt="{{ include.member.name }}" width="96" height="96" loading="lazy">{% else %}<span class="member-card__photo member-card__photo--placeholder" aria-hidden="true">{{ include.member.name | slice: 0 }}</span>{% endif %}
-  <h3 class="member-card__name">{{ include.member.name }}{% if include.member.name_en %} <span class="member-card__en">{{ include.member.name_en }}</span>{% endif %}</h3>
-  {% if include.member.role %}<p class="member-card__role">{{ include.member.role }}</p>{% endif %}
-  {% if include.member.year %}<p class="member-card__meta">{{ include.member.year }} 级</p>{% endif %}
-  {% if include.member.email %}<p class="member-card__meta"><a href="mailto:{{ include.member.email }}">{{ include.member.email }}</a></p>{% endif %}
+{%- assign mb = include.member -%}
+{%- if include.variant == 'faculty' -%}
+<article class="faculty-card">
+  {% if mb.photo %}<img class="faculty-card__photo" src="{{ mb.photo | relative_url }}" alt="{{ mb.name }} 照片" width="112" height="140" loading="lazy">{% else %}<span class="faculty-card__photo faculty-card__photo--placeholder" aria-hidden="true">{{ mb.name | slice: 0 }}</span>{% endif %}
+  <div class="faculty-card__body">
+    <h3 class="faculty-card__name">{{ mb.name }}{% if mb.name_en %} <span class="faculty-card__en">{{ mb.name_en }}</span>{% endif %}</h3>
+    {% if mb.role %}<p class="faculty-card__role">{{ mb.role }}</p>{% endif %}
+    {% if mb.email %}<p class="faculty-card__meta"><a href="mailto:{{ mb.email }}">{{ mb.email }}</a></p>{% endif %}
+  </div>
 </article>
+{%- else -%}
+<article class="member-card">
+  <div class="member-card__frame">
+    {% if mb.photo %}<img class="member-card__photo" src="{{ mb.photo | relative_url }}" alt="{{ mb.name }} 照片" width="200" height="250" loading="lazy">{% else %}<span class="member-card__photo member-card__photo--placeholder" aria-hidden="true">{{ mb.name | slice: 0 }}</span>{% endif %}
+  </div>
+  <div class="member-card__body">
+    <h3 class="member-card__name">{{ mb.name }}{% if mb.name_en %} <span class="member-card__en">{{ mb.name_en }}</span>{% endif %}</h3>
+    {% if mb.role or mb.year %}<p class="member-card__meta">{% if mb.role %}{{ mb.role }}{% endif %}{% if mb.role and mb.year %} · {% endif %}{% if mb.year %}{{ mb.year }} 级{% endif %}</p>{% endif %}
+    {% if mb.desc %}<p class="member-card__desc">{{ mb.desc }}</p>{% endif %}
+    {% if mb.email %}<p class="member-card__meta"><a href="mailto:{{ mb.email }}">{{ mb.email }}</a></p>{% endif %}
+  </div>
+</article>
+{%- endif -%}

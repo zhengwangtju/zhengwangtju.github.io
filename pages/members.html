@@ -25,8 +25,8 @@ description: 王征课题组成员、培养理念与毕业生。
     <h2 class="section-title">指导教师</h2>
     <span class="section-en">Faculty</span>
   </header>
-  <div class="member-grid">
-    {%- for person in m.faculty %}{% include components/member-card.html member=person %}{% endfor %}
+  <div class="faculty-grid">
+    {%- for person in m.faculty %}{% include components/member-card.html member=person variant='faculty' %}{% endfor %}
   </div>
 </section>
 
@@ -36,6 +36,7 @@ description: 王征课题组成员、培养理念与毕业生。
     <h2 class="section-title">在读学生</h2>
     <span class="section-en">Students</span>
   </header>
+  <p class="prose muted-note">博士研究生（按年级）。硕士、本科生名单更新中。</p>
   <div class="member-grid">
     {%- for person in m.students %}{% include components/member-card.html member=person %}{% endfor %}
   </div>
