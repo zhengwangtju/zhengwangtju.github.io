@@ -407,23 +407,50 @@ em{font-style:normal}
 .card:hover .card__arrow{transform:translateX(4px)}
 
 /* ── 14. Members ───────────────────────────────────────── */
-.member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:var(--gap)}
-.member-card{
-  text-align:center;padding:1.8rem 1.2rem;background:var(--paper);
+/* Faculty — horizontal media cards */
+.faculty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:var(--gap)}
+.faculty-card{
+  display:grid;grid-template-columns:auto 1fr;gap:1.3rem;align-items:center;
+  padding:1.4rem;background:var(--paper);
   border:1px solid var(--line);border-radius:var(--radius);
 }
+.faculty-card__photo{
+  width:112px;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;
+  border-radius:var(--radius);border:1px solid var(--line-2);display:block;
+}
+.faculty-card__photo--placeholder{
+  aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;
+  background:var(--paper-2);color:var(--gold);font-family:var(--serif);font-size:2.2rem;
+}
+.faculty-card__body{min-width:0}
+.faculty-card__name{font-size:1.32rem;font-weight:800;color:var(--navy);margin:0 0 .35rem;line-height:1.15}
+.faculty-card__en{font-family:var(--serif);font-style:italic;font-weight:400;font-size:.62em;color:var(--gold);margin-left:.4em;letter-spacing:.01em}
+.faculty-card__role{font-size:.9rem;color:var(--ink-soft);margin:.15rem 0 .7rem}
+.faculty-card__meta{font-size:.82rem;color:var(--muted);margin:.2rem 0;font-family:var(--mono);overflow-wrap:anywhere}
+.faculty-card__meta a{color:var(--link)}
+
+/* Students — portrait roster cards */
+.member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,184px),1fr));gap:var(--gap)}
+.member-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+.member-card__frame{margin:0;background:var(--paper-2);overflow:hidden}
 .member-card__photo{
-  width:88px;height:88px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;
-  border:1px solid var(--line-2);
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 16%;display:block;
 }
 .member-card__photo--placeholder{
-  display:flex;align-items:center;justify-content:center;
-  background:var(--paper-2);color:var(--gold);font-family:var(--serif);font-size:1.8rem;
+  aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;
+  background:var(--paper-2);color:var(--gold);font-family:var(--serif);font-size:2.8rem;
 }
-.member-card__name{font-size:1.1rem;font-weight:700;color:var(--navy);margin:0 0 .35rem}
-.member-card__en{font-family:var(--serif);font-style:italic;font-weight:400;font-size:.82rem;color:var(--muted)}
-.member-card__role{font-size:.86rem;color:var(--ink-soft);margin:.2rem 0}
-.member-card__meta{font-size:.8rem;color:var(--muted);margin:.2rem 0;font-family:var(--mono)}
+.member-card__body{padding:.95rem 1rem 1.15rem}
+.member-card__name{font-size:1.08rem;font-weight:700;color:var(--navy);margin:0 0 .3rem;line-height:1.2}
+.member-card__en{font-family:var(--serif);font-style:italic;font-weight:400;font-size:.78rem;color:var(--muted)}
+.member-card__meta{font-size:.74rem;color:var(--muted);margin:.18rem 0;font-family:var(--mono);letter-spacing:.02em;overflow-wrap:anywhere}
+.member-card__meta a{color:var(--link)}
+.member-card__desc{
+  font-size:.86rem;color:var(--ink-soft);line-height:1.5;
+  margin:.65rem 0 0;padding-top:.6rem;border-top:1px solid var(--line);
+}
 
 .alumni-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.65rem}
 .alumni{
@@ -540,6 +567,8 @@ html.no-js [data-reveal]{opacity:1!important;transform:none!important}
   .img-grid__item{overflow:hidden}
   .img-grid__item img{transition:transform var(--dur-3) var(--ease)}
   .img-grid__item:hover img{transform:scale(1.03)}
+  .member-card__photo{transition:transform var(--dur-3) var(--ease)}
+  .member-card:hover .member-card__photo{transform:scale(1.04)}
   .pi__photo{transition:box-shadow var(--dur-3) var(--ease),transform var(--dur-3) var(--ease)}
   .pi__media:hover .pi__photo{transform:translate(-2px,-2px)}
   .timeline__text::before{transition:transform var(--dur-1) var(--ease-out),box-shadow var(--dur-1) var(--ease-out)}
@@ -547,14 +576,15 @@ html.no-js [data-reveal]{opacity:1!important;transform:none!important}
   .timeline__item:hover .timeline__text{color:var(--ink)}
   .alumni{transition:border-color var(--dur-1) var(--ease-out),color var(--dur-1) var(--ease-out),background var(--dur-1) var(--ease-out),transform var(--dur-1) var(--ease-out),box-shadow var(--dur-1) var(--ease-out)}
   .alumni:hover{transform:translateY(-1px)}
-  .prose a,.timeline__text a,.pub__links a,.site-footer__list a{background-image:linear-gradient(var(--gold-bright),var(--gold-bright));background-size:0% 1.5px;background-repeat:no-repeat;background-position:left 92%;transition:background-size var(--dur-2) var(--ease-out),color var(--dur-1) var(--ease-out)}
-  .prose a:hover,.timeline__text a:hover,.pub__links a:hover,.site-footer__list a:hover{background-size:100% 1.5px}
+  .prose a,.timeline__text a,.pub__links a,.site-footer__list a,.faculty-card__meta a,.member-card__meta a{background-image:linear-gradient(var(--gold-bright),var(--gold-bright));background-size:0% 1.5px;background-repeat:no-repeat;background-position:left 92%;transition:background-size var(--dur-2) var(--ease-out),color var(--dur-1) var(--ease-out)}
+  .prose a:hover,.timeline__text a:hover,.pub__links a:hover,.site-footer__list a:hover,.faculty-card__meta a:hover,.member-card__meta a:hover{background-size:100% 1.5px}
   .site-nav__link::after{transform-origin:right}
   .site-nav__link:hover::after,.site-nav__link.is-active::after{transform-origin:left}
 }
 @media (prefers-reduced-motion:reduce){
   [data-reveal]{opacity:1!important;transform:none!important;transition:none}
-  .card:hover,.member-card:hover,.button:hover,.alumni:hover{transform:none}
+  .card:hover,.member-card:hover,.faculty-card:hover,.button:hover,.alumni:hover{transform:none}
+  .member-card:hover .member-card__photo{transform:none}
   .pi__media:hover .pi__photo{transform:none}
   .img-grid__item:hover img{transform:none}
   .timeline__item:hover .timeline__text::before{transform:translateX(-50%)}
@@ -575,6 +605,8 @@ html.no-js [data-reveal]{opacity:1!important;transform:none!important}
   .hero__domains{grid-template-columns:1fr 1fr}
   .hero__domains li{border-right:0;border-bottom:1px solid var(--line);padding:1.1rem 0}
   .hero__domains li:nth-child(odd){border-right:1px solid var(--line);padding-right:1.2rem}
+  .faculty-card{gap:1rem}
+  .faculty-card__photo{width:96px}
   .pi{grid-template-columns:1fr;gap:0}
   .pi__media{max-width:220px;margin-bottom:2rem}
   .pi__photo{box-shadow:12px 12px 0 -1px var(--line-2)}
@@ -634,8 +666,10 @@ html.no-js [data-reveal]{opacity:1!important;transform:none!important}
 .domain-grid,.meta-list{box-shadow:var(--shadow-xs)}
 .recruit{box-shadow:0 2px 6px var(--sh-warm-2),0 14px 30px -8px var(--sh-navy-4),0 28px 56px -16px rgba(6,42,69,.22)}
 .member-card{box-shadow:var(--shadow-xs);transition:border-color var(--dur-2) var(--ease),transform var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
-.member-card:hover{transform:translateY(-2px);border-color:var(--line-2);box-shadow:var(--shadow-sm)}
-.member-card__photo{box-shadow:var(--hl-top-soft),0 2px 6px -1px var(--sh-navy-2)}
+.member-card:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:var(--shadow-md)}
+.faculty-card{box-shadow:var(--shadow-xs);transition:border-color var(--dur-2) var(--ease),transform var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+.faculty-card:hover{transform:translateY(-2px);border-color:var(--line-2);box-shadow:var(--shadow-sm)}
+.faculty-card__photo{box-shadow:var(--hl-top-soft),0 2px 6px -1px var(--sh-navy-2)}
 .pi__photo{box-shadow:var(--hl-top-soft),0 6px 16px -6px var(--sh-navy-3),18px 18px 0 -2px var(--paper-3),18px 18px 0 -1px var(--line-2)}
 .img-grid__item img{box-shadow:var(--shadow-sm)}
 .pub__venue,.prose__label{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 1px 1.5px var(--sh-warm)}

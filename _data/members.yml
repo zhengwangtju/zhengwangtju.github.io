@@ -11,15 +11,54 @@ faculty:
     role: 教授 / 博导 · 课题组负责人
     photo: /assets/img/picture.jpg
     email: wzheng@tju.edu.cn
+  - name: 孙美君
+    name_en: Meijun Sun
+    role: 教授 / 博导
+    photo: /assets/img/members/sun-meijun.jpg
+    email: sunmeijun@tju.edu.cn
 
-# 在读学生 —— 真实名单待补充，以下为占位结构示例（保留字段供后续填充）
+# 在读学生 —— 博士生（2026-06-03 接入真实名单，按年级升序）；硕士 / 本科名单待补充
 students:
-  - name: （待补充）
+  - name: 冉浩崴
+    role: 博士研究生
+    year: 2023
+    photo: /assets/img/members/ran-haowei.jpg
+    desc: 时间序列分析与预测
+  - name: 王昊宇
+    role: 博士研究生
+    year: 2023
+    photo: /assets/img/members/wang-haoyu.jpg
+    desc: 复杂拓扑数据的深度感知与推理生成研究
+  - name: 刘程
+    role: 博士研究生
+    year: 2023
+    photo: /assets/img/members/liu-cheng.jpg
+    desc: 多模态视觉推理
+  - name: 赵杰
     role: 博士研究生
     year: 2025
-  - name: （待补充）
-    role: 硕士研究生
-    year: 2025
+    photo: /assets/img/members/zhao-jie.jpg
+    desc: 持续学习与视觉感知
+  - name: 李瑞彬
+    role: 博士研究生
+    year: 2026
+    photo: /assets/img/members/li-ruibin.jpg
+    desc: 多智能体协同感知与决策
+  - name: 吴允涛
+    role: 博士研究生
+    year: 2026
+    photo: /assets/img/members/wu-yuntao.jpg
+    desc: 时序预测大模型
+  - name: 高嘉靖
+    role: 博士研究生
+    year: 2026
+    photo: /assets/img/members/gao-jiajing.jpg
+    desc: 高温寒潮天气下的母线负荷样本条件生成算法
+  - name: 付宇哲
+    role: 博士研究生
+    year: 2026
+    photo: /assets/img/members/fu-yuzhe.jpg
+    desc: 时间序列大模型
 
 # 毕业生 / 校友（来自原 culture.html「实验室毕业生」，排名不分先后）
 alumni:
