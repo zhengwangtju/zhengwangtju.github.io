@@ -2,6 +2,7 @@
 <html lang="{{ site.lang | default: 'zh-CN' }}" class="no-js">
 {%- include layout/head.html -%}
 <body class="{% if page.url == '/' %}is-home{% endif %}">
+  <div class="scroll-progress" aria-hidden="true"></div>
   <script>
   /* 同步去 no-js（防闪烁）→ DOM 就绪后：进入视口才揭示 [data-reveal]，滚动加 .is-scrolled。
      内联、零依赖；JS 关闭时 html.no-js 兜底全可见，绝不出现内容消失。 */
@@ -18,11 +19,17 @@
         },{rootMargin:'0px 0px -12% 0px',threshold:0.08});
         nodes.forEach(function(n){io.observe(n);});
       }
-      var ticking=false;
-      function onScroll(){if(!ticking){ticking=true;window.requestAnimationFrame(function(){
-        document.body.classList.toggle('is-scrolled',window.scrollY>4);ticking=false;});}}
-      document.body.classList.toggle('is-scrolled',window.scrollY>4);
+      var ticking=false,prog=document.querySelector('.scroll-progress');
+      function tick(){
+        var de=document.documentElement,st=window.scrollY||de.scrollTop;
+        document.body.classList.toggle('is-scrolled',st>4);
+        if(prog){var max=de.scrollHeight-de.clientHeight;prog.style.setProperty('--p',max>0?(st/max).toFixed(4):0);}
+        ticking=false;
+      }
+      function onScroll(){if(!ticking){ticking=true;window.requestAnimationFrame(tick);}}
+      tick();
       window.addEventListener('scroll',onScroll,{passive:true});
+      window.addEventListener('resize',onScroll,{passive:true});
     }
     if(document.readyState!=='loading')init();else document.addEventListener('DOMContentLoaded',init);
   })();

@@ -744,3 +744,93 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;bac
 .hero__domain-en{color:rgba(238,243,248,.58)}
 .hero__domains li:not(:last-child)::after{background:linear-gradient(180deg,transparent,rgba(255,255,255,.20) 45%,rgba(255,255,255,.20) 55%,transparent)}
 @media (prefers-contrast:more){.hero{background-image:none;background-color:var(--navy)}}
+
+/* ============================================================
+   28. CRAFT PASS — 更考究的边线 · 更有层次的阴影 · 更丰富的交互
+   叠加覆盖前序扁平规则；全部 reduced-motion / no-js 友好。
+   ============================================================ */
+
+/* —— 28.1 受光斜边：单线 → 双线描边（内嵌白高光 hairline，去“简笔画”扁平感）—— */
+.card,.member-card,.faculty-card{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),var(--shadow-xs)}
+.domain-grid,.meta-list{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),var(--shadow-sm)}
+.img-grid__item img{box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),var(--shadow-sm)}
+.alumni{box-shadow:var(--shadow-xs)}
+.alumni:hover{box-shadow:var(--shadow-sm)}
+/* 内部分隔线统一改渐隐 hairline（替换扁平 1px border） */
+.card__more{border-top:0;background-image:var(--hair);background-repeat:no-repeat;background-position:top;background-size:100% 1px}
+.member-card__desc{border-top:0;background:var(--hair) top/100% 1px no-repeat}
+
+/* —— 28.2 卡片悬停：更深的金色调阴影 + 描边收紧 —— */
+.card:hover{border-color:var(--line-2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.62),var(--shadow-lg)}
+.member-card:hover,.faculty-card:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.62),var(--shadow-md)}
+/* 成员/教师卡：金色入场标线（呼应 .card 顶条）*/
+.member-card{position:relative}
+.member-card::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;z-index:3;background:var(--gold-bright);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-2) var(--ease-out)}
+.member-card:hover::after{transform:scaleX(1)}
+.faculty-card{position:relative;overflow:hidden}
+.faculty-card::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;z-index:3;background:var(--gold-bright);transform:scaleY(0);transform-origin:top;transition:transform var(--dur-2) var(--ease-out)}
+.faculty-card:hover::after{transform:scaleY(1)}
+.member-card__name,.faculty-card__name{transition:color var(--dur-1) var(--ease-out)}
+.member-card:hover .member-card__name,.faculty-card:hover .faculty-card__name{color:var(--navy-2)}
+
+/* —— 28.3 密集列表行（论文 / 项目经费）：hover 暖底 + 左侧金书标 + 标题点睛 —— */
+.pub,.grant{position:relative;isolation:isolate}
+.pub>*,.grant>*{position:relative;z-index:1}
+.pub::before,.grant::before{content:"";position:absolute;inset:.3rem -1rem;z-index:0;border-radius:3px;background:var(--paper-2);opacity:0;transition:opacity var(--dur-2) var(--ease-out)}
+.pub::after,.grant::after{content:"";position:absolute;left:-1rem;top:.55rem;bottom:.55rem;width:2px;z-index:1;border-radius:2px;background:var(--gold-bright);transform:scaleY(0);transform-origin:center;transition:transform var(--dur-2) var(--ease-out)}
+.pub:hover::before,.grant:hover::before{opacity:1}
+.pub:hover::after,.grant:hover::after{transform:scaleY(1)}
+.pub__title,.grant__title,.grant__idx,.pub__venue{transition:color var(--dur-1) var(--ease-out),border-color var(--dur-1) var(--ease-out),box-shadow var(--dur-1) var(--ease-out)}
+.pub:hover .pub__title,.grant:hover .grant__title{color:var(--navy-2)}
+.grant:hover .grant__idx{color:var(--gold-bright)}
+.pub:hover .pub__venue{border-color:var(--gold);color:var(--gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 0 2px var(--gold-wash)}
+
+/* 课程行：轻交互 */
+.course__name,.course__note{transition:color var(--dur-1) var(--ease-out)}
+.course:hover .course__name{color:var(--gold)}
+.course:hover .course__note{color:var(--ink-soft)}
+
+/* —— 28.4 索引清单 / 要点条目：标记点睛 + 微位移 —— */
+.lined-list li,.lined-list li::before,.pi__facts li,.pi__facts li::before,.feature__idx,.feature__key{transition:color var(--dur-1) var(--ease-out),transform var(--dur-1) var(--ease-out)}
+.lined-list li:hover,.pi__facts li:hover{color:var(--ink)}
+.lined-list li:hover::before,.pi__facts li:hover::before{color:var(--gold-bright);transform:translateX(2px)}
+.feature:hover .feature__idx{color:var(--gold-bright)}
+.feature:hover .feature__key{color:var(--navy-2)}
+
+/* —— 28.5 研究方向卡：左侧金条入场 + 文字点睛（叠加既有 bg 过渡）—— */
+.domain-card{position:relative;isolation:isolate}
+.domain-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;z-index:2;background:var(--gold-bright);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-2) var(--ease-out)}
+.domain-card:hover::before{transform:scaleX(1)}
+.domain-card__idx,.domain-card__title{transition:color var(--dur-1) var(--ease-out)}
+.domain-card:hover .domain-card__idx{color:var(--gold-bright)}
+.domain-card:hover .domain-card__title{color:var(--navy-2)}
+
+/* —— 28.6 Hero 应用方向索引带：hover 微亮 + 序号提亮（深色 hero 上）—— */
+.hero__domains li{transition:background-color var(--dur-2) var(--ease-out)}
+.hero__domains li:hover{background-color:rgba(255,255,255,.05)}
+.hero__domain-idx,.hero__domain-zh{transition:color var(--dur-1) var(--ease-out)}
+.hero__domains li:hover .hero__domain-idx{color:var(--gold-bright)}
+.hero__domains li:hover .hero__domain-zh{color:#fff}
+
+/* —— 28.7 分区标题分隔线：进入视口时自左“画”出 —— */
+.section-head::after{transform-origin:left;transition:transform .8s var(--ease) .12s}
+
+/* —— 28.8 顶部滚动进度细线（金渐变）—— */
+.scroll-progress{position:fixed;left:0;right:0;top:0;height:2px;z-index:60;transform:scaleX(var(--p,0));transform-origin:left;background:linear-gradient(90deg,var(--gold),var(--gold-bright) 55%);box-shadow:0 1px 3px -1px var(--sh-navy-3);pointer-events:none}
+
+@media (prefers-reduced-motion:no-preference){
+  /* 主按钮：hover 时一道暖光扫过（z-index:-1 + isolation → 扫光在底色之上、文字之下）*/
+  .button{position:relative;overflow:hidden;isolation:isolate}
+  .button::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.22) 50%,transparent 68%);transform:translateX(-120%);transition:transform .6s var(--ease-out)}
+  .button:hover::after{transform:translateX(120%)}
+  /* 分隔线绘制初态（仅 JS 开启且尚未进入视口时收起，no-js 全显）*/
+  html:not(.no-js) [data-reveal]:not(.is-visible) .section-head::after{transform:scaleX(0)}
+}
+@media (prefers-reduced-motion:reduce){
+  /* 去除一切“位移/缩放”类动效（颜色/不透明度过渡保留，与全站既有约定一致，非前庭性动效）。
+     本段是文件最后一块 reduce 规则，权威覆盖前序 §24 中位于 §21 之后的 hover 位移基规则。*/
+  .scroll-progress{transition:none}
+  .card:hover,.member-card:hover,.faculty-card:hover,.button:hover{transform:none}
+  .pub::before,.pub::after,.grant::before,.grant::after,.member-card::after,.faculty-card::after,.domain-card::before,.section-head::after{transition:none}
+  .lined-list li:hover::before,.pi__facts li:hover::before{transform:none}
+}
