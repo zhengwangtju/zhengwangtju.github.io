@@ -8,6 +8,7 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
 {%- assign info = site.data.site_info -%}
 
 <section class="hero">
+  <canvas id="hero-wave" class="hero__canvas" aria-hidden="true"></canvas>
   <div class="wrap hero__inner">
     <p class="eyebrow eyebrow--hero" data-reveal style="--d:0">天津大学 · 智能与计算学部 · 人工智能学院</p>
     <h1 class="hero__title" data-reveal style="--d:1">{{ info.group_name }}</h1>
@@ -17,7 +18,11 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
       <strong>时间序列预测大模型</strong>、<strong>多智能体记忆与推理</strong>、<strong>AI&nbsp;for&nbsp;Science</strong>，
       让模型在真实世界中学会记忆、推理与决策。
     </p>
-    <ul class="hero__domains" data-reveal style="--d:4">
+    <div class="hero__actions" data-reveal style="--d:4">
+      <a class="button" data-magnetic href="#research"><span>查看研究方向</span><span class="button__arrow" aria-hidden="true">→</span></a>
+      <a class="button button--ghost" href="#join"><span>招生 Join</span></a>
+    </div>
+    <ul class="hero__domains" data-reveal style="--d:5">
       <li><span class="hero__domain-idx">01</span><span class="hero__domain-zh">智能电网</span><span class="hero__domain-en">Smart Grid</span></li>
       <li><span class="hero__domain-idx">02</span><span class="hero__domain-zh">智慧管网</span><span class="hero__domain-en">Smart Pipeline</span></li>
       <li><span class="hero__domain-idx">03</span><span class="hero__domain-zh">智慧敦煌</span><span class="hero__domain-en">Digital Dunhuang</span></li>
@@ -26,10 +31,33 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
   </div>
 </section>
 
+<section class="stats" data-reveal aria-label="课题组概览">
+  <div class="wrap">
+    <div class="stats__grid">
+      <div class="stat">
+        <div class="stat__num"><span data-count="100">100</span><span class="stat__suffix">+</span></div>
+        <p class="stat__label">高水平论文<span class="stat__en">Publications</span></p>
+      </div>
+      <div class="stat">
+        <div class="stat__num"><span data-count="30">30</span><span class="stat__suffix">+</span></div>
+        <p class="stat__label">科研项目<span class="stat__en">Projects &amp; Grants</span></p>
+      </div>
+      <div class="stat">
+        <div class="stat__num"><span data-count="2">2</span></div>
+        <p class="stat__label">天津市科技进步二等奖<span class="stat__en">Provincial Awards</span></p>
+      </div>
+      <div class="stat">
+        <div class="stat__num"><span data-count="4">4</span></div>
+        <p class="stat__label">重点应用领域<span class="stat__en">Application Domains</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="band band--pi" data-reveal>
   <div class="wrap pi">
     <figure class="pi__media">
-      <img class="pi__photo" src="{{ info.photo | relative_url }}" alt="{{ info.name_zh }} 照片" width="250" height="350">
+      <img class="pi__photo" src="{{ info.photo | relative_url }}" alt="{{ info.name_zh }} 照片" width="266" height="372">
       <figcaption class="pi__cap">{{ info.name_zh }} · Zheng Wang</figcaption>
     </figure>
     <div class="pi__body">
@@ -38,23 +66,21 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
       <p class="pi__role">天津大学 智能与计算学部 人工智能学院 · 教授 / 博导</p>
       <div class="pi__bio">
         <p class="prose">王征老师的本（98 级）硕博均为天大培养（真心感谢学校），有 4 年企业锻炼背景（喜欢做实用的工作），曾赴法国国家信息与自动化研究所（INRIA）和美国南卡罗莱纳大学访学，2009 年留校至今。曾获 2020 年天津大学“我心目中的好导师”等荣誉称号。</p>
-        <p class="prose">研究方向为大模型和智能体，目前发表论文一百余篇，包括 CVPR、AAAI、TIP、TMM、TNNLS 等高水平会议期刊（希望能发表 Nature / Science 及子刊，梦想.jpg）。</p>
-        <p class="prose">作为负责人承担2030智能电网重大专项课题、AI+专项重大课题、国家自然科学基金、科技部重点研发计划课题、企业委托课题共三十余项。获得天津市科技进步二等奖两项。</p>
+        <p class="prose">研究方向为大模型和智能体，目前发表论文一百余篇，包括 <em>CVPR、AAAI、TIP、TMM、TNNLS</em> 等高水平会议期刊（希望能发表 Nature / Science 及子刊，梦想.jpg）。</p>
+        <p class="prose">作为负责人承担 2030 智能电网重大专项课题、AI+专项重大课题、国家自然科学基金、科技部重点研发计划课题、企业委托课题共三十余项。获得天津市科技进步二等奖两项。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section wrap" data-reveal>
+<section class="section wrap" id="research" data-reveal>
   <header class="section-head">
-    <span class="section-num">01</span>
-    <h2 class="section-title">研究领域</h2>
-    <span class="section-en">Research</span>
+    <h2 class="section-title">研究领域<span class="section-title__en">Research</span></h2>
   </header>
 
   <div class="research">
     <div class="research__theory">
-      <p class="eyebrow">理论研究 · Foundations</p>
+      <p class="research__head"><span class="research__head-zh">理论研究</span> · Foundations</p>
       <ul class="lined-list">
         <li>时间序列分析与预测大模型</li>
         <li>多智能体协同感知、预测与决策理论</li>
@@ -64,24 +90,24 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
     </div>
 
     <div class="research__apps">
-      <p class="eyebrow">应用研究 · Applications</p>
+      <p class="research__head"><span class="research__head-zh">应用研究</span> · Applications</p>
       <div class="domain-grid">
-        <article class="domain-card">
+        <article class="domain-card" data-spotlight>
           <span class="domain-card__idx">01</span>
           <h3 class="domain-card__title">智慧电网</h3>
           <p class="domain-card__text">母线负荷预测大模型、大小模型协同预测、预测模型自进化、电力系统运行与市场风险监测、多智能体协同决策。</p>
         </article>
-        <article class="domain-card">
+        <article class="domain-card" data-spotlight>
           <span class="domain-card__idx">02</span>
           <h3 class="domain-card__title">智慧管网</h3>
           <p class="domain-card__text">管网数据智能对齐、多智能体管网风险评估、开放环境下弱目标感知推理技术。</p>
         </article>
-        <article class="domain-card">
+        <article class="domain-card" data-spotlight>
           <span class="domain-card__idx">03</span>
           <h3 class="domain-card__title">智慧敦煌</h3>
           <p class="domain-card__text">多源异构数据智能对齐、多场耦合相似性方案智慧生成、壁画病害监测。</p>
         </article>
-        <article class="domain-card">
+        <article class="domain-card" data-spotlight>
           <span class="domain-card__idx">04</span>
           <h3 class="domain-card__title">智慧教育</h3>
           <p class="domain-card__text">AI for Science 大模型、虚实融合技术、基于 Unreal Engine（虚幻引擎）的未来教育。</p>
@@ -91,15 +117,15 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
   </div>
 </section>
 
-<section class="section wrap" data-reveal>
+<section class="section wrap" id="join" data-reveal>
   <header class="section-head">
-    <span class="section-num">02</span>
-    <h2 class="section-title">实验室招聘</h2>
-    <span class="section-en">Join Us</span>
+    <h2 class="section-title">实验室招聘<span class="section-title__en">Join Us</span></h2>
   </header>
 
   <div class="recruit">
     <span class="recruit__bg" aria-hidden="true"></span>
+    <span class="recruit__glow" aria-hidden="true"></span>
+    <p class="recruit__badge"><span class="dot" aria-hidden="true"></span>正在招生 · Open Positions</p>
     <p class="recruit__lead">长期招收与实验室方向相符的<strong>博士后</strong>；<strong>2026、2027、2028 级</strong>硕士、博士研究生持续招生，亦招收有意攻读本实验室研究生的<strong>科研助理</strong>。有意者欢迎通过微信联系（B 站 {{ info.contact.bilibili }}）。</p>
     <ul class="bullet-list">
       <li>招收 2026、2027、2028 级学术与工程博士（含在职工程博士）。</li>
@@ -108,14 +134,15 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
       <li>所有博士申请人需提前在实验室担任三个月以上科研助理，可提前线上 / 线下到岗者优先。</li>
       <li>在职工程博士在符合学校报名条件下，可依托校企合作申请。</li>
     </ul>
+    <div class="recruit__actions">
+      <a class="button" href="mailto:{{ info.contact.email }}"><span>邮件联系 {{ info.contact.email }}</span></a>
+    </div>
   </div>
 </section>
 
 <section class="section wrap" data-reveal>
   <header class="section-head">
-    <span class="section-num">03</span>
-    <h2 class="section-title">科研模式与实验室特色</h2>
-    <span class="section-en">How We Work</span>
+    <h2 class="section-title">科研模式与实验室特色<span class="section-title__en">How We Work</span></h2>
   </header>
 
   <p class="prose lead">实验室由博士生、不同年级硕士生与本科生科研助理协同组成，真实课题与高水平论文并重；扁平化管理、老带新、按贡献署名，鼓励大胆创新。</p>
@@ -123,37 +150,35 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
   <ol class="feature-list">
     <li class="feature">
       <span class="feature__idx">01</span>
-      <h3 class="feature__key">方向前沿</h3>
-      <p class="feature__text">研究方向面向国家重大需求，具备国家级项目与企业合作通道。</p>
+      <div><h3 class="feature__key">方向前沿</h3>
+      <p class="feature__text">研究方向面向国家重大需求，具备国家级项目与企业合作通道。</p></div>
     </li>
     <li class="feature">
       <span class="feature__idx">02</span>
-      <h3 class="feature__key">氛围浓厚</h3>
-      <p class="feature__text">学术氛围浓厚，新手与资深成员都能找到各自的成长空间。</p>
+      <div><h3 class="feature__key">氛围浓厚</h3>
+      <p class="feature__text">学术氛围浓厚，新手与资深成员都能找到各自的成长空间。</p></div>
     </li>
     <li class="feature">
       <span class="feature__idx">03</span>
-      <h3 class="feature__key">梯队成熟</h3>
-      <p class="feature__text">梯队建设与管理机制完善，老带新，对新人友好。</p>
+      <div><h3 class="feature__key">梯队成熟</h3>
+      <p class="feature__text">梯队建设与管理机制完善，老带新，对新人友好。</p></div>
     </li>
     <li class="feature">
       <span class="feature__idx">04</span>
-      <h3 class="feature__key">按劳分配</h3>
-      <p class="feature__text">以贡献为准、按劳分配，鼓励按期乃至提前毕业。</p>
+      <div><h3 class="feature__key">按劳分配</h3>
+      <p class="feature__text">以贡献为准、按劳分配，鼓励按期乃至提前毕业。</p></div>
     </li>
     <li class="feature">
       <span class="feature__idx">05</span>
-      <h3 class="feature__key">出口畅通</h3>
-      <p class="feature__text">除 IT 名企外，与国家电科院、国家能源集团及多家研究院所建立人才输送通道。</p>
+      <div><h3 class="feature__key">出口畅通</h3>
+      <p class="feature__text">除 IT 名企外，与国家电科院、国家能源集团及多家研究院所建立人才输送通道。</p></div>
     </li>
   </ol>
 </section>
 
 <section class="section wrap" data-reveal>
   <header class="section-head">
-    <span class="section-num">04</span>
-    <h2 class="section-title">实验室动态</h2>
-    <span class="section-en">News</span>
+    <h2 class="section-title">实验室动态<span class="section-title__en">News</span></h2>
   </header>
 
   {%- assign raw_news = site.data.news -%}
@@ -170,17 +195,15 @@ description: 天津大学王征教授课题组（记忆与推理课题组）—�
 
 <section class="section wrap" data-reveal>
   <header class="section-head">
-    <span class="section-num">05</span>
-    <h2 class="section-title">主讲课程</h2>
-    <span class="section-en">Teaching</span>
+    <h2 class="section-title">主讲课程<span class="section-title__en">Teaching</span></h2>
   </header>
 
   <ul class="course-list">
-    <li class="course"><span class="course__name">《智慧科研导论 — AI for Research》</span><span class="course__note">课程负责人 · 全校研究生通识课 · 2025 至今</span></li>
+    <li class="course"><span class="course__name">《智慧科研导论 · AI for Research》</span><span class="course__note">课程负责人 · 全校研究生通识课 · 2025 至今</span></li>
     <li class="course"><span class="course__name">《人工智能导论》</span><span class="course__note">全校本科生通识课 · 2025 至今</span></li>
     <li class="course"><span class="course__name">《算法设计与分析》</span><span class="course__note">课程总负责人 · 智慧树共享课负责人 · 天津市一流课程 · 2009 至今</span></li>
     <li class="course"><span class="course__name">《智能识别系统综合实践》</span><span class="course__note">2022 至今</span></li>
-    <li class="course"><span class="course__name">《模式识别》</span><span class="course__note">2017 — 2022</span></li>
+    <li class="course"><span class="course__name">《模式识别》</span><span class="course__note">2017-2022</span></li>
     <li class="course"><span class="course__name">《多媒体应用技术基础》</span><span class="course__note">课程作品比课程本身更有意思的一门课 · 2019 至今</span></li>
     <li class="course"><span class="course__name">《软件工程》《大模型技术与应用》</span><span class="course__note">为国家电网等多个企业开展培训</span></li>
   </ul>

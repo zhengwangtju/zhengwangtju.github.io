@@ -12,9 +12,7 @@ layout: default
 
     <section class="section">
       <header class="section-head">
-        <span class="section-num">01</span>
-        <h2 class="section-title">项目介绍</h2>
-        <span class="section-en">Overview</span>
+        <h2 class="section-title">项目介绍<span class="section-title__en">Overview</span></h2>
       </header>
       {% if page.problem %}<div class="prose"><span class="prose__label">问题</span>{{ page.problem }}</div>{% endif %}
       {% if page.solution %}<div class="prose"><span class="prose__label">方案</span>{{ page.solution }}</div>{% endif %}
@@ -24,9 +22,7 @@ layout: default
     {% if page.arch_images %}
     <section class="section">
       <header class="section-head">
-        <span class="section-num">02</span>
-        <h2 class="section-title">项目架构</h2>
-        <span class="section-en">Architecture</span>
+        <h2 class="section-title">项目架构<span class="section-title__en">Architecture</span></h2>
       </header>
       <div class="img-grid">
         {%- for img in page.arch_images %}
@@ -39,9 +35,7 @@ layout: default
     {% if page.effect_images %}
     <section class="section">
       <header class="section-head">
-        <span class="section-num">03</span>
-        <h2 class="section-title">效果展示</h2>
-        <span class="section-en">Results</span>
+        <h2 class="section-title">效果展示<span class="section-title__en">Results</span></h2>
       </header>
       <div class="img-grid">
         {%- for img in page.effect_images %}
