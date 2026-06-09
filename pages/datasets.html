@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Datasets
-subtitle: 数据集
+title: 数据集
+subtitle: Datasets
 permalink: /datasets/
 active_nav: datasets
 description: 王征课题组自建数据集。
@@ -9,9 +9,7 @@ description: 王征课题组自建数据集。
 {%- assign dss = site.datasets | sort: 'order' -%}
 <section class="section" data-reveal>
   <header class="section-head">
-    <span class="section-num">01</span>
-    <h2 class="section-title">自建数据集</h2>
-    <span class="section-en">Datasets</span>
+    <h2 class="section-title">自建数据集<span class="section-title__en">Datasets</span></h2>
   </header>
   {% if dss.size == 0 %}
   <p class="prose empty-state">数据集即将上线。</p>
