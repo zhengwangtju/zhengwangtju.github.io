@@ -30,10 +30,10 @@
 - [ ] **Step 1: Run content assertions and verify they fail on the remote baseline**
 
 ```powershell
-$home = Get-Content -Raw -Encoding UTF8 pages/home.html
-if ($home -notmatch '博士招生 &middot; PhD') { throw 'missing PhD heading' }
-if ($home -notmatch '硕士招生 &middot; Master') { throw 'missing master heading' }
-if ($home -notmatch '目前 2026 级还有名额') { throw 'missing master recruitment copy' }
+$homepageContent = Get-Content -Raw -Encoding UTF8 pages/home.html
+if ($homepageContent -notmatch '博士招生 &middot; PhD') { throw 'missing PhD heading' }
+if ($homepageContent -notmatch '硕士招生 &middot; Master') { throw 'missing master heading' }
+if ($homepageContent -notmatch '目前 2026 级还有名额') { throw 'missing master recruitment copy' }
 ```
 
 Expected: FAIL with `missing PhD heading`.
@@ -79,10 +79,10 @@ In `assets/css/site.css`, after the existing recruitment action rules, add:
 - [ ] **Step 4: Re-run the content assertions**
 
 ```powershell
-$home = Get-Content -Raw -Encoding UTF8 pages/home.html
-if ($home -notmatch '博士招生 &middot; PhD') { throw 'missing PhD heading' }
-if ($home -notmatch '硕士招生 &middot; Master') { throw 'missing master heading' }
-if ($home -notmatch '目前 2026 级还有名额') { throw 'missing master recruitment copy' }
+$homepageContent = Get-Content -Raw -Encoding UTF8 pages/home.html
+if ($homepageContent -notmatch '博士招生 &middot; PhD') { throw 'missing PhD heading' }
+if ($homepageContent -notmatch '硕士招生 &middot; Master') { throw 'missing master heading' }
+if ($homepageContent -notmatch '目前 2026 级还有名额') { throw 'missing master recruitment copy' }
 $css = Get-Content -Raw -Encoding UTF8 assets/css/site.css
 if ($css -notmatch '\.recruit__table-title') { throw 'missing table title style' }
 ```
