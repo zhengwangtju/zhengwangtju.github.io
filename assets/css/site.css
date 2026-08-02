@@ -359,6 +359,10 @@ body.is-scrolled .masthead{background:rgba(9,12,17,.86);border-bottom-color:var(
 .recruit .bullet-list li{color:var(--ink-2)}
 .recruit__actions{position:relative;z-index:1;margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.9rem}
 
+.recruit__table{position:relative;z-index:1;margin-bottom:1.6rem}
+.recruit__table-title{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2);margin:0 0 .8rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+.recruit__table .bullet-list{margin:0;max-width:54rem}
+
 /* ── 10. Features (how we work) ─────────────────────────── */
 .feature-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-1)}
 .feature{position:relative;background:var(--surface-1);padding:1.7rem 1.6rem;display:grid;grid-template-columns:auto 1fr;gap:.2rem 1.2rem;align-items:baseline;transition:background var(--d2) var(--ease)}
